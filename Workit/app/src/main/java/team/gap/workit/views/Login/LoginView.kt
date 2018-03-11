@@ -1,6 +1,7 @@
 package team.gap.workit.views.Login
 
 import com.hannesdorfmann.mosby3.mvp.MvpView
+import io.reactivex.Observable
 
 /**
  * Created by George Theocharis on 3/11/2018.
@@ -8,5 +9,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpView
 
 interface LoginView : MvpView
 {
-    
+    fun loginIntent(): Observable<Unit>
+
+    fun render(state: LoginViewState)
 }
