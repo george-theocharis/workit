@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Workit</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="terms"><![CDATA[Terms & Conditions]]></string>
+    <string name="terms_agree"><![CDATA[I have read and agree to these terms & conditions]]></string>
 </resources>
