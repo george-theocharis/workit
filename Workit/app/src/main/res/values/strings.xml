@@ -5,4 +5,9 @@
     <string name="login">Login</string>
     <string name="forgotPassword">Forgot your password? Click here!</string>
     <string name="register_account">Don\'t have an account? Create one now! It\'s super easy!</string>
+
+    <string name="register_email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms"><![CDATA[Terms & Conditions]]></string>
+    <string name="register_button">Register</string>
 </resources>
