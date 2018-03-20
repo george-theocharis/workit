@@ -1,4 +1,4 @@
-package team.gap.workit.views.Login
+package team.gap.workit.views.Login.presentation.views.LoginView
 
 /**
  * Created by George Theocharis on 3/11/2018.

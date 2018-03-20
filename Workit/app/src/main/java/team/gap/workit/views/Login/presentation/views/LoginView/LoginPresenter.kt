@@ -1,4 +1,4 @@
-package team.gap.workit.views.Login
+package team.gap.workit.views.Login.presentation.views.LoginView
 
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
 
