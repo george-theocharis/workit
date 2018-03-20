@@ -12,10 +12,17 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         textViewRegister.setOnClickListener { navigateToRegister() }
+
+        btn_login.setOnClickListener { navigateToHome()}
     }
 
     private fun navigateToRegister() {
         val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 }
