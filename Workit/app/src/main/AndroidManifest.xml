@@ -18,7 +18,15 @@
         </activity>
         <activity android:name=".RegisterActivity">
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
