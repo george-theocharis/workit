@@ -9,4 +9,9 @@ class AddCustomerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_customer)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.stay, R.anim.slide_down)
+    }
 }
