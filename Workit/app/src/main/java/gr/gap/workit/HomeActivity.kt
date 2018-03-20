@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
         return true
     }
 
-    fun navigateToAddCustomer() {
+    private fun navigateToAddCustomer() {
         val intent = Intent(this, AddCustomerActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_up, R.anim.stay)
