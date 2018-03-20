@@ -1,4 +1,4 @@
-package team.gap.workit
+package gr.gap.workit
 
 import org.junit.Test
 

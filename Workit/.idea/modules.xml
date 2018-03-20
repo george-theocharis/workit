@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Workit.iml" filepath="$PROJECT_DIR$/Workit.iml" />
-      <module fileurl="file://D:\TopSecret\Workit\Workit.iml" filepath="D:\TopSecret\Workit\Workit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\TopSecret\Workit\app\app.iml" filepath="D:\TopSecret\Workit\app\app.iml" />
     </modules>
   </component>
 </project>

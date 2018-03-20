@@ -1,4 +1,4 @@
-package team.gap.workit
+package gr.gap.workit
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("team.gap.workit", appContext.packageName)
+        assertEquals("gr.gap.workit", appContext.packageName)
     }
 }
