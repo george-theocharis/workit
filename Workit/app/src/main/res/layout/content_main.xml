@@ -21,7 +21,7 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@mipmap/ic_add_customer" />
+        app:srcCompat="@drawable/ic_add_customer" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
