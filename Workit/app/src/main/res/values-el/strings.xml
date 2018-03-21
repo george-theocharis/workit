@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Workit</string>
+
+    <string name="email">Email</string>
+    <string name="password">Κωδικός</string>
+    <string name="login">Είσοδος</string>
+    <string name="forgotPassword">Ξέχασα τον κωδικό</string>
+    <string name="register_account">Δεν έχεις λογαριασμό; Κάνε κλικ εδώ!</string>
+
+    <string name="confirm_password">Επαλήθευση Κωδικού</string>
+    <string name="terms">Όροι και Προϋποθέσεις</string>
+    <string name="register_button">Εγγραφή</string>
+    <string name="action_search">Αναζήτηση</string>
+    <string name="search_hint">Αναζήτηση...</string>
+</resources>
