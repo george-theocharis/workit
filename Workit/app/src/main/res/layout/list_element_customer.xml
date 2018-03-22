@@ -10,26 +10,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="John Doe"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/customerImage"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@+id/customerIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/customerImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/customerIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:text="JD"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_customer"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/actions"
@@ -43,40 +46,50 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerName">
+        app:layout_constraintTop_toBottomOf="@+id/customerIcon"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/call"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/call"
             app:srcCompat="@drawable/ic_call"
-            android:contentDescription="@string/call"/>
+            android:tint="@android:color/darker_gray"
+            />
 
         <ImageView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/sms"
             app:srcCompat="@drawable/ic_text"
-            android:contentDescription="@string/sms" />
+            android:tint="@android:color/darker_gray"
+            />
 
         <ImageView
             android:id="@+id/mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/email"
             app:srcCompat="@drawable/ic_email"
-            android:contentDescription="@string/email"/>
+            android:tint="@android:color/darker_gray"
+            />
 
         <ImageView
             android:id="@+id/more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/more_info"
             app:srcCompat="@drawable/ic_more"
-            android:contentDescription="@string/more_info"/>
+            android:tint="@android:color/darker_gray"
+            />
 
     </LinearLayout>
 
