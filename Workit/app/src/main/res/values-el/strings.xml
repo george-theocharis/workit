@@ -1,26 +1,36 @@
 <resources>
+    <!-- Application -->
     <string name="app_name">Workit</string>
 
+    <!-- Login -->
     <string name="email">Email</string>
     <string name="password">Κωδικός</string>
     <string name="login">Είσοδος</string>
     <string name="forgotPassword">Ξέχασα τον κωδικό</string>
-    <string name="forgotPasswordTitle">Πληκτρολόγησε το email σου</string>
-    <string name="forgotPasswordMessage">Θα λάβεις σύντομα ένα email με τις οδηγίες για αλλαγή του κωδικού πρόσβασής σου</string>
     <string name="register_account">Δεν έχεις λογαριασμό; Κάνε κλικ εδώ!</string>
 
+    <!-- Forgot Password Popup -->
+    <string name="forgotPasswordTitle">Πληκτρολόγησε το email σου</string>
+    <string name="forgotPasswordMessage">Θα λάβεις σύντομα ένα email με τις οδηγίες για αλλαγή του κωδικού πρόσβασής σου</string>
+    <string name="send">Αποστολή</string>
+
+    <!-- Register -->
+    <string name="first_name">Όνομα</string>
+    <string name="last_name">Επώνυμο</string>
     <string name="confirm_password">Επαλήθευση Κωδικού</string>
     <string name="terms">Όροι και Προϋποθέσεις</string>
     <string name="register_button">Εγγραφή</string>
+
+    <!-- Toolbar -->
     <string name="action_search">Αναζήτηση</string>
     <string name="search_hint">Αναζήτηση...</string>
-    <string name="phone">Τηλέφωνο</string>
-    <string name="location">Τοποθεσία</string>
+
+    <!-- Content Description -->
     <string name="call">Κλήση</string>
     <string name="sms">Sms</string>
     <string name="more_info">Περισσότερα</string>
-    <string name="first_name">Όνομα</string>
-    <string name="last_name">Επώνυμο</string>
+    <string name="phone">Τηλέφωνο</string>
+    <string name="location">Τοποθεσία</string>
     <string name="visibility">Ορατότητα</string>
-    <string name="send">Αποστολή</string>
+
 </resources>

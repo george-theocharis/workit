@@ -1,25 +1,36 @@
 <resources>
-    <string name="app_name">Workit</string>
-    <string name="email">Username</string>
+    <!-- Application -->
+    <string name="app_name">WorKit</string>
+
+    <!-- Login -->
+    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="forgotPassword">Forgot Password</string>
-    <string name="forgotPasswordTitle">Write your email address</string>
-    <string name="forgotPasswordMessage">Υou will soon receive an email with the steps you have to follow to change your password</string>
     <string name="register_account">Don\'t have an account? Create one now! It\'s super easy!</string>
 
+    <!-- Forgot Password Popup -->
+    <string name="forgotPasswordTitle">Write your email address</string>
+    <string name="forgotPasswordMessage">Υou will soon receive an email with the steps you have to follow to change your password</string>
+    <string name="send">Send</string>
+
+    <!-- Register -->
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="terms"><![CDATA[Terms & Conditions]]></string>
     <string name="register_button">Register</string>
+
+    <!-- Toolbar -->
     <string name="action_search">Search</string>
     <string name="search_hint">Search...</string>
-    <string name="phone">Phone</string>
-    <string name="location">Location</string>
+
+    <!-- Content Description -->
     <string name="call">Call</string>
     <string name="sms">Sms</string>
     <string name="more_info">More Info</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="location">Location</string>
     <string name="visibility">Visibility</string>
-    <string name="send">Send</string>
+
 </resources>
