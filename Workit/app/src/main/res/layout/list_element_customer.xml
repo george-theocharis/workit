@@ -5,51 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/customerName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="John Doe"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/black"
-        app:layout_constraintStart_toEndOf="@+id/customerIcon"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/customerIcon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/circle"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:text="JD"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"
+        android:minHeight="40dp"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/customerIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/customerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="John Doe"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/actions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerIcon"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/nameLayout">
 
         <ImageView
             android:id="@+id/call"
@@ -57,9 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/call"
-            app:srcCompat="@drawable/ic_call"
             android:tint="@android:color/darker_gray"
-            />
+            app:srcCompat="@drawable/ic_call" />
 
         <ImageView
             android:id="@+id/text"
@@ -67,9 +69,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/sms"
-            app:srcCompat="@drawable/ic_text"
             android:tint="@android:color/darker_gray"
-            />
+            app:srcCompat="@drawable/ic_text" />
 
         <ImageView
             android:id="@+id/mail"
@@ -77,9 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/email"
-            app:srcCompat="@drawable/ic_email"
             android:tint="@android:color/darker_gray"
-            />
+            app:srcCompat="@drawable/ic_email" />
 
         <ImageView
             android:id="@+id/more"
@@ -87,10 +87,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/more_info"
-            app:srcCompat="@drawable/ic_more"
             android:tint="@android:color/darker_gray"
-            />
+            app:srcCompat="@drawable/ic_more" />
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="368dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actions" />
 
 </android.support.constraint.ConstraintLayout>
