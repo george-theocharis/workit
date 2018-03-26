@@ -6,16 +6,16 @@ import android.support.v7.app.AlertDialog
 import android.text.InputType
 import android.widget.EditText
 import com.hannesdorfmann.mosby3.mvi.MviActivity
-import gr.gap.workit.presentation.HomeView.HomeActivity
+import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
+import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
+import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
-    override fun createPresenter(): LoginPresenter {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun createPresenter(): LoginPresenter = LoginPresenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +57,8 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
         dialog.setView(editTextMail)
         dialog.show()
     }
+
+    override fun loginIntent(): Observable<String> = RxView.clicks(btn_login).flatMap{ _ -> Observable.just(inputEmail.text.toString())}
 
     override fun render(state: LoginViewState) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

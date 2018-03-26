@@ -1,6 +1,6 @@
 package gr.gap.workit.presentation.LoginView
 
-import gr.gap.workit.domain.User
+import gr.gap.workit.domain.model.User
 
 /**
  * Created by developer1 on 26/03/2018.

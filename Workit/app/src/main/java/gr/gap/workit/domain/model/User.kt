@@ -1,4 +1,4 @@
-package gr.gap.workit.domain
+package gr.gap.workit.domain.model
 
 /**
  * Created by developer1 on 26/03/2018.

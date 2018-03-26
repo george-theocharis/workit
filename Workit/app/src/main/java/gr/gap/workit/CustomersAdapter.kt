@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.view.isVisible
-import gr.gap.workit.domain.Customer
+import gr.gap.workit.domain.model.Customer
 import kotlinx.android.synthetic.main.list_element_customer.view.*
 import java.util.*
 
