@@ -1,4 +1,4 @@
-package gr.gap.workit
+package gr.gap.workit.presentation.LoginView
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,9 @@ import android.support.v7.app.AlertDialog
 import android.text.InputType
 import android.widget.EditText
 import com.hannesdorfmann.mosby3.mvi.MviActivity
+import gr.gap.workit.presentation.HomeView.HomeActivity
+import gr.gap.workit.R
+import gr.gap.workit.presentation.RegisterView.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {

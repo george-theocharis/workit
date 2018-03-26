@@ -1,4 +1,4 @@
-package gr.gap.workit
+package gr.gap.workit.presentation.LoginView
 
 import com.hannesdorfmann.mosby3.mvp.MvpView
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="gr.gap.workit.LoginActivity">
+    tools:context=".presentation.LoginView.LoginActivity">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"

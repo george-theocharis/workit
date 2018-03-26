@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name="gr.gap.workit.presentation.LoginView.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name="gr.gap.workit.presentation.RegisterView.RegisterActivity">
         </activity>
-        <activity android:name=".HomeActivity" >
+        <activity android:name=".presentation.HomeView.HomeActivity" >
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AddCustomerActivity"/>
+        <activity android:name=".presentation.AddCustomerView.AddCustomerActivity"/>
     </application>
 
 </manifest>

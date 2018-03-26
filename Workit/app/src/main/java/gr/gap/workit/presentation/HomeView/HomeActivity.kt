@@ -1,4 +1,4 @@
-package gr.gap.workit
+package gr.gap.workit.presentation.HomeView
 
 import android.app.SearchManager
 import android.content.Context
@@ -9,6 +9,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.widget.LinearLayout
+import gr.gap.workit.presentation.AddCustomerView.AddCustomerActivity
+import gr.gap.workit.CustomersAdapter
+import gr.gap.workit.R
+import gr.gap.workit.domain.Customer
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_main.*
 

@@ -1,7 +1,6 @@
-package gr.gap.workit
+package gr.gap.workit.presentation.LoginView
 
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
-import com.hannesdorfmann.mosby3.mvi.MviPresenter
 
 /**
  * Created by developer1 on 26/03/2018.

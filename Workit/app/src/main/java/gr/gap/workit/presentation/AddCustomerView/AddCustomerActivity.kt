@@ -1,7 +1,8 @@
-package gr.gap.workit
+package gr.gap.workit.presentation.AddCustomerView
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import gr.gap.workit.R
 
 class AddCustomerActivity : AppCompatActivity() {
 
