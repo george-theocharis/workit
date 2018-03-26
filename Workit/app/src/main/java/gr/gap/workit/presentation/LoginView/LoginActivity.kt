@@ -10,7 +10,6 @@ import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
 import gr.gap.workit.domain.model.LoginCredentials
-import gr.gap.workit.domain.model.User
 import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
 import io.reactivex.Observable

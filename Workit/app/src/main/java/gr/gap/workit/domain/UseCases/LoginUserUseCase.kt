@@ -1,8 +1,7 @@
-package gr.gap.workit.domain.UseCases
+package gr.gap.workit.domain.usecases
 
 import gr.gap.workit.domain.model.LoginCredentials
 import gr.gap.workit.domain.model.User
-import gr.gap.workit.presentation.LoginView.LoginView
 import gr.gap.workit.presentation.LoginView.LoginViewState
 import io.reactivex.Observable
 

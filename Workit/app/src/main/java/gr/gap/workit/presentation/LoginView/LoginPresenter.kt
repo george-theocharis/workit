@@ -1,8 +1,7 @@
 package gr.gap.workit.presentation.LoginView
 
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
-import gr.gap.workit.domain.UseCases.LoginUserUseCase
-import io.reactivex.Scheduler
+import gr.gap.workit.domain.usecases.LoginUserUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
