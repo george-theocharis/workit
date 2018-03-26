@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.text.InputType
+import android.view.View
 import android.widget.EditText
 import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
+import gr.gap.workit.domain.model.User
 import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
 import io.reactivex.Observable
@@ -23,9 +25,8 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
         textViewRegister.setOnClickListener { navigateToRegister() }
 
-        textView.setOnClickListener{showForgotPasswordDialog()}
+        btn_forgotPassword.setOnClickListener{showForgotPasswordDialog()}
 
-        btn_login.setOnClickListener { navigateToHome()}
     }
 
     private fun navigateToRegister() {
@@ -61,6 +62,24 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
     override fun loginIntent(): Observable<String> = RxView.clicks(btn_login).flatMap{ _ -> Observable.just(inputEmail.text.toString())}
 
     override fun render(state: LoginViewState) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        when(state) {
+            is LoginViewState.Loading -> renderLoading()
+            is LoginViewState.Data -> renderLogin(state)
+            is LoginViewState.Error -> renderError(state)
+        }
+    }
+
+    private fun renderLoading(){
+        layoutEmail.visibility = View.GONE
+    }
+
+    private fun renderLogin(state: LoginViewState){
+        layoutEmail.visibility = View.VISIBLE
+        navigateToHome()
+    }
+
+    private fun renderError(state: LoginViewState){
+        layoutEmail.visibility = View.VISIBLE
+        textLogo.text = "Error!"
     }
 }
