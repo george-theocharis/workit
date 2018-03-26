@@ -30,9 +30,9 @@ class CustomersAdapter(val customers : ArrayList<Customer>): RecyclerView.Adapte
 
             itemView.nameLayout.setOnClickListener{
                 if(!itemView.actions.isVisible)
-                    itemView.actions.setVisibility(View.VISIBLE)
+                    itemView.actions.visibility = View.VISIBLE
                 else
-                    itemView.actions.setVisibility(View.GONE)
+                    itemView.actions.visibility = View.GONE
             }
         }
     }
