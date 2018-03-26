@@ -9,6 +9,7 @@ import android.widget.EditText
 import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
+import gr.gap.workit.domain.model.LoginCredentials
 import gr.gap.workit.domain.model.User
 import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
@@ -59,7 +60,10 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
         dialog.show()
     }
 
-    override fun loginIntent(): Observable<String> = RxView.clicks(btn_login).flatMap{ _ -> Observable.just(inputEmail.text.toString())}
+    override fun loginIntent(): Observable<LoginCredentials> = RxView.clicks(btn_login).flatMap{ _ ->
+        Observable.just(
+                LoginCredentials(inputEmail.text.toString(), inputPassword.text.toString()
+        ))}
 
     override fun render(state: LoginViewState) {
         when(state) {

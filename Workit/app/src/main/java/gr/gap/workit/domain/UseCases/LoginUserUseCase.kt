@@ -1,5 +1,6 @@
 package gr.gap.workit.domain.UseCases
 
+import gr.gap.workit.domain.model.LoginCredentials
 import gr.gap.workit.domain.model.User
 import gr.gap.workit.presentation.LoginView.LoginView
 import gr.gap.workit.presentation.LoginView.LoginViewState
@@ -10,7 +11,7 @@ import io.reactivex.Observable
  */
 class LoginUserUseCase {
 
-    fun loginUser(email: String): Observable<LoginViewState> {
+    fun loginUser(credentials: LoginCredentials): Observable<LoginViewState> {
         return Observable.just(true)
                 .map<LoginViewState> { LoginViewState.Data(User(1)) }
                 .startWith(LoginViewState.Loading)
