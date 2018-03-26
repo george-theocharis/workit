@@ -3,23 +3,33 @@ package gr.gap.workit
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SearchView
 import android.view.Menu
-import android.widget.TextView
+import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var searchView: SearchView
+    private lateinit var customerList: ArrayList<Customer>
+    private lateinit var customerAdapter: CustomersAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
+
+        customerList = ArrayList<Customer>()
+        fillCustomersList()
+
+        customerAdapter = CustomersAdapter(customerList)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+        recyclerView.adapter = customerAdapter
 
         buttonAdd.setOnClickListener { navigateToAddCustomer() }
     }
@@ -41,5 +51,12 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
         overridePendingTransition(R.anim.slide_up, R.anim.stay)
     }
+
+    private fun fillCustomersList() {
+        customerList?.add(Customer("John", "Papageorgiou"))
+        customerList?.add(Customer("Giorgos", "Theocharis"))
+        customerList?.add(Customer("Argyris", "Prosilis"))
+    }
+
 }
 
