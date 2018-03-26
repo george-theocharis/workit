@@ -8,7 +8,7 @@ import android.text.InputType
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,5 +49,9 @@ class LoginActivity : AppCompatActivity() {
         val dialog = dialogBuilder.create()
         dialog.setView(editTextMail)
         dialog.show()
+    }
+
+    override fun render(state: LoginViewState) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
