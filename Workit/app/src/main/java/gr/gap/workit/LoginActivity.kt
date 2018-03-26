@@ -3,12 +3,16 @@ package gr.gap.workit
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.text.InputType
 import android.widget.EditText
+import com.hannesdorfmann.mosby3.mvi.MviActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity(), LoginView {
+class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
+
+    override fun createPresenter(): LoginPresenter {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
