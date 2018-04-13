@@ -9,10 +9,11 @@
         android:id="@+id/nameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:minHeight="40dp"
         android:orientation="horizontal"
-        android:paddingTop="8dp"
+        android:background="?selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,61 +43,70 @@
 
     <LinearLayout
         android:id="@+id/actions"
+        android:orientation="horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
         android:visibility="gone"
+        android:weightSum="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameLayout">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/call"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:contentDescription="@string/call"
             android:tint="@android:color/darker_gray"
+            android:background="?selectableItemBackground"
             app:srcCompat="@drawable/ic_call" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:contentDescription="@string/sms"
             android:tint="@android:color/darker_gray"
+            android:background="?selectableItemBackground"
             app:srcCompat="@drawable/ic_text" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/mail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:contentDescription="@string/email"
             android:tint="@android:color/darker_gray"
+            android:background="?selectableItemBackground"
             app:srcCompat="@drawable/ic_email" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/more"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:contentDescription="@string/more_info"
             android:tint="@android:color/darker_gray"
+            android:background="?selectableItemBackground"
             app:srcCompat="@drawable/ic_more" />
 
     </LinearLayout>
 
     <View
         android:id="@+id/divider"
-        android:layout_width="368dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

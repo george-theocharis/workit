@@ -14,6 +14,7 @@ class CustomersAdapter(val customers : ArrayList<Customer>): RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomersAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_element_customer, parent, false)
+
         return ViewHolder(v)
     }
 
