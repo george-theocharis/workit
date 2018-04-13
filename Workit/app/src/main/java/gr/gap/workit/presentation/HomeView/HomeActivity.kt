@@ -13,6 +13,7 @@ import gr.gap.workit.presentation.AddCustomerView.AddCustomerActivity
 import gr.gap.workit.CustomersAdapter
 import gr.gap.workit.R
 import gr.gap.workit.domain.model.Customer
+import gr.gap.workit.presentation.CustomerDetailsView.CustomerDetailsActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -56,11 +57,19 @@ class HomeActivity : AppCompatActivity() {
         overridePendingTransition(R.anim.slide_up, R.anim.stay)
     }
 
-    private fun fillCustomersList() {
-        customerList?.add(Customer("John", "Papageorgiou"))
-        customerList?.add(Customer("Giorgos", "Theocharis"))
-        customerList?.add(Customer("Argyris", "Prosilis"))
+    fun navigateToCustomerDetails(){
+        val intent = Intent(this, CustomerDetailsActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.slide_up, R.anim.stay)
     }
+
+    private fun fillCustomersList() {
+        customerList?.add(Customer(1, 1, 1, "jdoe@mail.com", "Νίκος", "Αναστασίου"))
+        customerList?.add(Customer(1, 1, 1, "jdoe@mail.com", "Nick", "Cave"))
+        customerList?.add(Customer(1, 1, 1, "jdoe@mail.com", "Jack", "Black"))
+    }
+
+
 
 }
 

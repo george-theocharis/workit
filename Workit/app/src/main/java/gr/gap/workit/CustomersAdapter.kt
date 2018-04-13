@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.view.isVisible
+import androidx.core.view.isVisible
 import gr.gap.workit.domain.model.Customer
 import kotlinx.android.synthetic.main.list_element_customer.view.*
 import java.util.*
@@ -14,6 +14,7 @@ class CustomersAdapter(val customers : ArrayList<Customer>): RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomersAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_element_customer, parent, false)
+
         return ViewHolder(v)
     }
 
