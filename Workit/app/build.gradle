@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'kotlin-platform-android'
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -25,6 +25,9 @@ android {
 }
 
 dependencies {
+
+    def daggerVer = 2.15
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'androidx.core:core-ktx:0.3'
@@ -41,6 +44,8 @@ dependencies {
     implementation 'com.hannesdorfmann.mosby3:mvi:3.1.0'
     implementation "io.reactivex.rxjava2:rxjava:2.1.12"
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
-    implementation 'com.google.dagger:dagger:2.15'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+    implementation "com.google.dagger:dagger:$daggerVer"
+    implementation "com.google.dagger:dagger-android-support:$daggerVer"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVer"
+    kapt "com.google.dagger:dagger-compiler:$daggerVer"
 }

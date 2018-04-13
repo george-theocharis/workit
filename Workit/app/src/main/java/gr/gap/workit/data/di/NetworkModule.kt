@@ -10,21 +10,5 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkModule {
 
-    @Provides
-    @Reusable
-    @JvmStatic
-    internal fun provideCustomersApi(retrofit: Retrofit): CustomersApi {
-        return retrofit.create(CustomersApi::class.java)
-    }
 
-    @Provides
-    @Reusable
-    @JvmStatic
-    internal fun provideRetrofitInterface(): Retrofit {
-        return Retrofit.Builder()
-                //.baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-                .build()
-    }
 }

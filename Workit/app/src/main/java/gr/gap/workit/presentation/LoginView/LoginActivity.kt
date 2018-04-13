@@ -9,6 +9,9 @@ import android.widget.EditText
 import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
+import gr.gap.workit.data.di.login.LoginModule
+import gr.gap.workit.data.di.app.App
+import gr.gap.workit.data.di.login.DaggerLoginComponent
 import gr.gap.workit.domain.model.LoginCredentials
 import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
@@ -17,16 +20,17 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
-    override fun createPresenter(): LoginPresenter = LoginPresenter()
+    override fun createPresenter(): LoginPresenter = DaggerLoginComponent.builder().appComponent(App.component).loginModule(LoginModule()).build().presenter()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         textViewRegister.setOnClickListener { navigateToRegister() }
 
         btn_forgotPassword.setOnClickListener{showForgotPasswordDialog()}
-
     }
 
     private fun navigateToRegister() {
