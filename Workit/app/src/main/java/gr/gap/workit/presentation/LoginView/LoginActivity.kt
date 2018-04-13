@@ -82,11 +82,11 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
     private fun renderLogin(state: LoginViewState){
         layoutEmail.visibility = View.VISIBLE
-        navigateToHome()
+        textLogo.text = (state as LoginViewState.Data).user.email
     }
 
     private fun renderError(state: LoginViewState){
         layoutEmail.visibility = View.VISIBLE
-        textLogo.text = "Error!"
+        textLogo.text = (state as LoginViewState.Error).error.message
     }
 }

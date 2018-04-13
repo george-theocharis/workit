@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface UserApi{
 
-    @GET("/me")
+    @GET("me")
     fun getUser(): Observable<User>
 }

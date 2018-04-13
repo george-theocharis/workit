@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gr.gap.workit">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="gr.gap.workit.data.di.app.App"
         android:allowBackup="true"
