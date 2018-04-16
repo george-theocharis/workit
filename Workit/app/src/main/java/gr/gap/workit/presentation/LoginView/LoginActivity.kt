@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
-    override fun createPresenter(): LoginPresenter = DaggerLoginComponent.builder().appComponent(App.component).loginModule(LoginModule()).build().presenter()
+    override fun createPresenter(): LoginPresenter = DaggerLoginComponent.builder().loginModule(LoginModule()).build().presenter()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

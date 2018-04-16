@@ -5,7 +5,7 @@ import gr.gap.workit.data.di.app.AppComponent
 import gr.gap.workit.domain.usecases.LoginUserUseCase
 import gr.gap.workit.presentation.LoginView.LoginPresenter
 
-@Component(modules = [(LoginModule::class)], dependencies = [(AppComponent::class)])
+@Component(modules = [(LoginModule::class)])
 interface LoginComponent {
     fun presenter(): LoginPresenter
     fun loginUserUseCase(): LoginUserUseCase
