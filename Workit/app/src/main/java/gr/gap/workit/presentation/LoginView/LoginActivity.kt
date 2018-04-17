@@ -21,7 +21,6 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
     override fun createPresenter(): LoginPresenter = DaggerLoginComponent.builder().loginModule(LoginModule()).build().presenter()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -82,6 +81,7 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
     private fun renderLogin(state: LoginViewState){
         layoutEmail.visibility = View.VISIBLE
         navigateToHome()
+        finish()
     }
 
     private fun renderError(state: LoginViewState){
