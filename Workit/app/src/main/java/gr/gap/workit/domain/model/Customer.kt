@@ -1,3 +1,5 @@
 package gr.gap.workit.domain.model
 
-data class Customer (val id : Int, val refStoreId : Int, val refUserId: Int, val email : String, var firstName : String, var lastName : String )
+import com.squareup.moshi.Json
+
+data class Customer (val id: Int, val email: String, @Json(name="first_name")var firstName: String, @Json(name="last_name") var lastName: String)

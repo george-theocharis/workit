@@ -6,12 +6,12 @@ import android.support.v7.app.AlertDialog
 import android.text.InputType
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
 import gr.gap.workit.data.di.login.DaggerLoginComponent
 import gr.gap.workit.data.di.login.LoginModule
-import gr.gap.workit.domain.model.LoginCredentials
 import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
 import io.reactivex.Observable
@@ -50,8 +50,8 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
             setTitle(R.string.forgotPasswordTitle)
             setMessage(R.string.forgotPasswordMessage)
             editTextMail = EditText(this.context)
-            editTextMail?.hint= getString(R.string.email)
-            editTextMail?.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+            editTextMail.hint= getString(R.string.email)
+            editTextMail.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
             setPositiveButton(R.string.send){
                 dialog, _ -> dialog.dismiss()
             }
@@ -62,10 +62,10 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
         dialog.show()
     }
 
-    override fun loginIntent(): Observable<LoginCredentials> = RxView.clicks(btn_login).flatMap{ _ ->
-        Observable.just(
-                LoginCredentials(inputEmail.text.toString(), inputPassword.text.toString()
-        ))}
+    override fun loginIntent(): Observable<String> = RxView.clicks(btn_login)
+            .flatMap { _ ->
+                Observable.just(inputEmail.text.toString())
+            }
 
     override fun render(state: LoginViewState) {
         when(state) {
@@ -81,7 +81,7 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
     private fun renderLogin(state: LoginViewState){
         layoutEmail.visibility = View.VISIBLE
-        textLogo.text = (state as LoginViewState.Data).user.email
+        navigateToHome()
     }
 
     private fun renderError(state: LoginViewState){
