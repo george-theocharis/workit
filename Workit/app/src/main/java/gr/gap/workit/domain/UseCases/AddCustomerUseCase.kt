@@ -1,3 +1,5 @@
+package gr.gap.workit.domain.usecases
+
 import gr.gap.workit.data.network.CustomersApi
 import gr.gap.workit.domain.model.Customer
 import gr.gap.workit.presentation.AddCustomerView.AddCustomerViewState

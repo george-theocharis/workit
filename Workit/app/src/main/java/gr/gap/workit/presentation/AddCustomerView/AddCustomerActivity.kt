@@ -6,7 +6,6 @@ import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
 import gr.gap.workit.data.di.addCustomer.AddCustomerModule
 import gr.gap.workit.data.di.addCustomer.DaggerAddCustomerComponent
-import gr.gap.workit.data.di.customers.CustomersModule
 import gr.gap.workit.domain.model.Customer
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_add_customer.*

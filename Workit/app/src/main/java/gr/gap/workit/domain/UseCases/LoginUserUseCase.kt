@@ -1,7 +1,6 @@
 package gr.gap.workit.domain.usecases
 
 import gr.gap.workit.data.network.UserApi
-import gr.gap.workit.domain.model.User
 import gr.gap.workit.presentation.LoginView.LoginViewState
 import io.reactivex.Observable
 import javax.inject.Inject

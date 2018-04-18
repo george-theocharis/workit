@@ -1,7 +1,7 @@
 package gr.gap.workit.presentation.AddCustomerView
 
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
-import gr.gap.workit.domain.UseCases.AddCustomerUseCase
+import gr.gap.workit.domain.usecases.AddCustomerUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject

@@ -4,7 +4,6 @@ import dagger.Module
 import dagger.Provides
 import gr.gap.workit.data.di.NetworkModule
 import gr.gap.workit.data.network.CustomersApi
-import gr.gap.workit.domain.UseCases.AddCustomerUseCase
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
