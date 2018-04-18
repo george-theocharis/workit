@@ -15,8 +15,6 @@
     <string name="send">Send</string>
 
     <!-- Register -->
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="terms"><![CDATA[Terms & Conditions]]></string>
     <string name="register_button">Register</string>
@@ -32,5 +30,7 @@
     <string name="phone">Phone</string>
     <string name="location">Location</string>
     <string name="visibility">Visibility</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
 
 </resources>
