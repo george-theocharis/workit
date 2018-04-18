@@ -4,8 +4,7 @@ import android.os.Bundle
 import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
-import gr.gap.workit.data.di.register.DaggerRegisterUserComponent
-import gr.gap.workit.data.di.register.RegisterUserModule
+import gr.gap.workit.data.di.App
 import gr.gap.workit.domain.model.User
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_register.*
@@ -33,7 +32,7 @@ class RegisterActivity : MviActivity<RegisterView, RegisterPresenter>(), Registe
     private fun renderLoading() {
     }
 
-    override fun createPresenter(): RegisterPresenter = DaggerRegisterUserComponent.builder().registerUserModule(RegisterUserModule()).build().presenter()
+    override fun createPresenter(): RegisterPresenter =  App.component.registerPresenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

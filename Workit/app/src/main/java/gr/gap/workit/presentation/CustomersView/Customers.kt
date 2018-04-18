@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout.VERTICAL
 import com.hannesdorfmann.mosby3.mvi.layout.MviFrameLayout
 import gr.gap.workit.R
-import gr.gap.workit.data.di.customers.CustomersModule
-import gr.gap.workit.data.di.customers.DaggerCustomersComponent
+import gr.gap.workit.data.di.App
 import gr.gap.workit.domain.model.Customer
 import gr.gap.workit.presentation.LoginView.CustomersPresenter
 import gr.gap.workit.presentation.LoginView.CustomersView
@@ -18,7 +17,7 @@ import kotlinx.android.synthetic.main.view_customers.view.*
 
 class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresenter> {
 
-    override fun createPresenter(): CustomersPresenter = DaggerCustomersComponent.builder().customersModule(CustomersModule()).build().presenter()
+    override fun createPresenter(): CustomersPresenter = App.component.customersPresenter()
 
     private var customersAdapter = CustomersAdapter(ArrayList())
 

@@ -1,4 +1,4 @@
-package gr.gap.workit.data.di.app
+package gr.gap.workit.data.di
 
 import android.app.Application
 

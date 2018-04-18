@@ -6,12 +6,10 @@ import android.support.v7.app.AlertDialog
 import android.text.InputType
 import android.view.View
 import android.widget.EditText
-import android.widget.LinearLayout
 import com.hannesdorfmann.mosby3.mvi.MviActivity
 import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
-import gr.gap.workit.data.di.login.DaggerLoginComponent
-import gr.gap.workit.data.di.login.LoginModule
+import gr.gap.workit.data.di.App
 import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.RegisterView.RegisterActivity
 import io.reactivex.Observable
@@ -19,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
 
-    override fun createPresenter(): LoginPresenter = DaggerLoginComponent.builder().loginModule(LoginModule()).build().presenter()
+    override fun createPresenter(): LoginPresenter = App.component.loginPresenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
