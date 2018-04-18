@@ -14,7 +14,7 @@ class AddCustomerPresenter @Inject constructor(private val addCustomerUseCase: A
     override fun bindIntents() {
 
         val addCustomerObs = intent (AddCustomerView::addCustomerIntent)
-                .switchMap { addCustomerUseCase.add(it)}
+                .switchMap {  addCustomerUseCase.add(it)}
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 

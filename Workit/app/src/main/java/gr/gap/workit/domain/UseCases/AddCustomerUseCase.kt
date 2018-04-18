@@ -8,11 +8,11 @@ import javax.inject.Inject
 
 class AddCustomerUseCase @Inject constructor(private val customersApi: CustomersApi){
 
-    fun add(customer: Customer): Observable<AddCustomerViewState> {
-        return customersApi.addCustomer(customer)
-                .map<AddCustomerViewState> { AddCustomerViewState.Data }
-                .startWith(AddCustomerViewState.Loading)
-                .onErrorReturn { AddCustomerViewState.Error(it) }
-    }
+    fun add(customer: Customer): Observable<AddCustomerViewState> =
+            customersApi.addCustomer(customer)
+                        .map<AddCustomerViewState> { AddCustomerViewState.Data }
+                        .startWith(AddCustomerViewState.Loading)
+                        .onErrorReturn { AddCustomerViewState.Error(it) }
+
 }
 
