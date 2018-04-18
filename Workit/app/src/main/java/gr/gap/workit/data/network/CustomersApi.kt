@@ -10,8 +10,8 @@ import retrofit2.http.Path
 
 interface CustomersApi {
 
-    @GET("customers")
-    fun getCustomers(): Observable<List<Customer>>
+    @GET("stores/{store_id}/customers")
+    fun getCustomers(@Path("store_id") id: Int = 1): Observable<List<Customer>>
 
     @GET("customers/{id}")
     fun getCustomer(@Path("id") id: Int): Observable<Customer>
