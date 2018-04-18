@@ -32,5 +32,9 @@
     <string name="visibility">Visibility</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="address_number">Address No</string>
+    <string name="zip">Zip Code</string>
+    <string name="phone_tag">Tag</string>
 
 </resources>
