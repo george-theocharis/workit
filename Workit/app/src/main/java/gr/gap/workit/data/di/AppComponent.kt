@@ -4,8 +4,8 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import gr.gap.workit.presentation.AddCustomerView.AddCustomerPresenter
+import gr.gap.workit.presentation.CustomerDetailsView.CustomerDetailsPresenter
 import gr.gap.workit.presentation.LoginView.CustomersPresenter
-import gr.gap.workit.presentation.LoginView.CustomersPresenter_Factory
 import gr.gap.workit.presentation.LoginView.LoginPresenter
 import gr.gap.workit.presentation.RegisterView.RegisterPresenter
 import javax.inject.Singleton
@@ -24,4 +24,5 @@ interface AppComponent {
     fun registerPresenter(): RegisterPresenter
     fun customersPresenter(): CustomersPresenter
     fun addCustomerPresenter(): AddCustomerPresenter
+    fun customerDetailsPresenter(): CustomerDetailsPresenter
 }
