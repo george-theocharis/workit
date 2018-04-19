@@ -14,6 +14,9 @@ import kotlinx.android.synthetic.main.fragment_customer_details.*
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
 
+    private val phonesAdapter: CustomerPhonesAdapter = CustomerPhonesAdapter(ArrayList())
+    private val locationsAdapter: CustomerAddressesAdapter = CustomerAddressesAdapter(ArrayList())
+
     override fun createPresenter(): CustomerDetailsPresenter = App.component.customerDetailsPresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,7 +27,10 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
         super.onViewCreated(view, savedInstanceState)
 
         phonesList.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        phonesList.adapter = phonesAdapter
+
         locationsList.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        locationsList.adapter = locationsAdapter
     }
 
     override fun loadCustomerDetailsIntent(): Observable<Boolean> = Observable.just(true)
@@ -44,8 +50,9 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     private fun renderData(state: CustomerDetailsViewState.Data){
         (context as CustomerDetailsActivity)?.UpdateHeader(state.customer)
 
-        phonesList.adapter = CustomerPhonesAdapter(state.customer.phones!!)
-        locationsList.adapter = CustomerAddressesAdapter(state.customer.addresses!!)
+        phonesAdapter.updateList(state.customer.phones!!)
+
+        locationsAdapter.updateList(state.customer.addresses!!)
 
         emailText.text = state.customer.email
     }

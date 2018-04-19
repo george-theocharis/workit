@@ -9,7 +9,7 @@ import gr.gap.workit.domain.model.CustomerPhone
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.list_element_customer_phone.view.*
 
-class CustomerPhonesAdapter(val phones: List<CustomerPhone>) : RecyclerView.Adapter<CustomerPhonesAdapter.ViewHolder>() {
+class CustomerPhonesAdapter(val phones: ArrayList<CustomerPhone>) : RecyclerView.Adapter<CustomerPhonesAdapter.ViewHolder>() {
 
     private val phoneClickSubject = PublishSubject.create<CustomerPhone>()
 
@@ -20,6 +20,12 @@ class CustomerPhonesAdapter(val phones: List<CustomerPhone>) : RecyclerView.Adap
     override fun getItemCount(): Int = phones.count()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bindItems(phones[position])
+
+    fun updateList(phones: List<CustomerPhone>) {
+        this.phones.clear()
+        this.phones.addAll(phones)
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(itemView : View, clickSubject: PublishSubject<CustomerPhone>) : RecyclerView.ViewHolder(itemView) {
 

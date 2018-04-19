@@ -9,7 +9,7 @@ import gr.gap.workit.domain.model.CustomerAddress
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.list_element_customer_address.view.*
 
-class CustomerAddressesAdapter(val addresses: List<CustomerAddress>) : RecyclerView.Adapter<CustomerAddressesAdapter.ViewHolder>() {
+class CustomerAddressesAdapter(val addresses: ArrayList<CustomerAddress>) : RecyclerView.Adapter<CustomerAddressesAdapter.ViewHolder>() {
 
     private val addressClickSubject = PublishSubject.create<CustomerAddress>()
 
@@ -20,6 +20,12 @@ class CustomerAddressesAdapter(val addresses: List<CustomerAddress>) : RecyclerV
     override fun getItemCount(): Int = addresses.count()
 
     override fun onBindViewHolder(holder: CustomerAddressesAdapter.ViewHolder, position: Int) = holder.bindItems(addresses[position])
+
+    fun updateList(addresses: List<CustomerAddress>) {
+        this.addresses.clear()
+        this.addresses.addAll(addresses)
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(itemView : View, clickSubject: PublishSubject<CustomerAddress>) : RecyclerView.ViewHolder(itemView) {
         val listener: PublishSubject<CustomerAddress> = clickSubject
