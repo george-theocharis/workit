@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.list_element_customer.view.*
 import java.util.*
 
 
-class CustomersAdapter(val customers : ArrayList<Customer>): RecyclerView.Adapter<CustomersAdapter.ViewHolder>() {
+class CustomersAdapter(private val customers : ArrayList<Customer>): RecyclerView.Adapter<CustomersAdapter.ViewHolder>() {
 
     private val customerClickSubject = PublishSubject.create<Customer>()
 
