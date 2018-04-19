@@ -9,22 +9,23 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_books"
-        android:enabled="false"
+        android:enabled="true"
         android:icon="@drawable/ic_customer"
+        android:title="@string/books"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_debts"
-        android:enabled="false"
+        android:enabled="true"
         android:icon="@drawable/ic_location"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_payments"
-        android:enabled="false"
+        android:enabled="true"
         android:icon="@drawable/ic_sms"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_dates"
-        android:enabled="false"
+        android:enabled="true"
         android:icon="@drawable/ic_email"
         app:showAsAction="ifRoom" />
 </menu>
