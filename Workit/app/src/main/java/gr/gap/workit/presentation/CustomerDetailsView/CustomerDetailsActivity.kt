@@ -10,5 +10,7 @@ class CustomerDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_customer_details)
+
+
     }
 }

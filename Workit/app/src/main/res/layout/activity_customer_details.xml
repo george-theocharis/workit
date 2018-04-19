@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent"
@@ -13,8 +13,10 @@
         android:id="@+id/header"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:gravity="center"
         android:background="@color/colorPrimary"
         >
@@ -42,153 +44,154 @@
             />
 
     </LinearLayout>
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="8">
-
-    <ScrollView
-        android:id="@+id/scroll"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header">
 
-        <LinearLayout
-            android:id="@+id/scrollLayout"
-            android:orientation="vertical"
+        <ScrollView
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
             >
 
             <LinearLayout
-                android:id="@+id/phonesLayout"
-                android:orientation="horizontal"
+                android:id="@+id/scrollLayout"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:padding="16dp"
                 >
 
-                <ImageView
-                    android:id="@+id/phonesImage"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/phonesLayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="8dp"
-                    app:srcCompat="@drawable/ic_call"
-                    android:tint="@color/colorPrimary"
+                    android:layout_weight="5"
+                    >
+
+                    <ImageView
+                        android:id="@+id/phonesImage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_call"
+                        android:tint="@color/colorPrimary"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/phonesList"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:padding="8dp"
+                        tools:listitem="@layout/list_element_customer_phone"
+                        tools:itemCount="2"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/phonesDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
                     />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/phonesList"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/emailsLayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:padding="8dp"
-                    tools:listitem="@layout/list_element_customer_phone"
-                    tools:itemCount="2"
+                    android:layout_weight="5"
+                    android:layout_marginTop="8dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/emailsImage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_email"
+                        android:tint="@color/colorPrimary"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/emailsList"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:padding="8dp"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/list_element_customer_email"
+                        />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/emailsDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/locationsLayout"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_marginTop="8dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/locationsImage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="8dp"
+                        app:srcCompat="@drawable/ic_location"
+                        android:tint="@color/colorPrimary"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/locationsList"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:padding="8dp"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/list_element_customer_address" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/locationsDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
                     />
 
             </LinearLayout>
 
-            <View
-                android:id="@+id/phonesDivider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                />
+        </ScrollView>
 
-            <LinearLayout
-                android:id="@+id/emailsLayout"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:layout_marginTop="8dp"
-                >
-
-                <ImageView
-                    android:id="@+id/emailsImage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="8dp"
-                    app:srcCompat="@drawable/ic_email"
-                    android:tint="@color/colorPrimary"
-                    />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/emailsList"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:padding="8dp"
-                    tools:itemCount="1"
-                    tools:listitem="@layout/list_element_customer_email"
-                    />
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/emailsDivider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                />
-
-            <LinearLayout
-                android:id="@+id/locationsLayout"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:layout_marginTop="8dp"
-                >
-
-                <ImageView
-                    android:id="@+id/locationsImage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="8dp"
-                    app:srcCompat="@drawable/ic_location"
-                    android:tint="@color/colorPrimary"
-                    />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/locationsList"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:padding="8dp"
-                    tools:itemCount="1"
-                    tools:listitem="@layout/list_element_customer_address" />
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/locationsDivider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@android:color/darker_gray"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
+    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         android:background="@color/colorPrimary"
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/btm_nav_selector"
         app:itemTextColor="@drawable/btm_nav_selector"
-        app:menu="@menu/bottom_navigation_customer_details" />
+        app:menu="@menu/bottom_navigation_customer_details"
+        />
 
-</FrameLayout>
-
-</LinearLayout>
+</RelativeLayout>

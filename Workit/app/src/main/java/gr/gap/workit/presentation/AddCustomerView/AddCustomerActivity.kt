@@ -36,7 +36,7 @@ class AddCustomerActivity : MviActivity<AddCustomerView, AddCustomerPresenter>()
     }
 
     override fun addCustomerIntent(): Observable<Customer> = RxView.clicks(buttonDone)
-            .flatMap { _ -> Observable.just(Customer(10,"customer@mobile.com","Mr","Workit")) }
+            .flatMap { _ -> Observable.just(Customer(10,"customer@mobile.com","Mr","Workit",null,null)) }
 
     override fun createPresenter(): AddCustomerPresenter = App.component.addCustomerPresenter()
 
