@@ -4,6 +4,7 @@ import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
+import gr.gap.workit.data.network.BooksApi
 import gr.gap.workit.data.network.CustomersApi
 import gr.gap.workit.data.network.UserApi
 import io.reactivex.schedulers.Schedulers
@@ -27,6 +28,11 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideCustomersApi(retrofit: Retrofit): CustomersApi = retrofit.create(CustomersApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideBooksApi(retrofit: Retrofit): BooksApi =
+            retrofit.create(BooksApi::class.java)
 
     @Singleton
     @Provides

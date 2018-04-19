@@ -8,7 +8,7 @@ import javax.inject.Inject
 class GetCustomersUseCase @Inject constructor(private val customersApi: CustomersApi){
 
     fun getCustomers(): Observable<CustomersViewState> {
-        return customersApi.getCustomers()
+        return customersApi.getCustomers(1)
                 .map<CustomersViewState> { CustomersViewState.Data(it) }
                 .startWith(CustomersViewState.Loading)
                 .onErrorReturn { CustomersViewState.Error(it) }
