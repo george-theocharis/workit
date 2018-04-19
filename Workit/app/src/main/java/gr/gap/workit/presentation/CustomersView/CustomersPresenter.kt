@@ -13,11 +13,11 @@ import javax.inject.Inject
 class CustomersPresenter @Inject constructor(private val getCustomersUseCase: GetCustomersUseCase) : MviBasePresenter<CustomersView, CustomersViewState>() {
     override fun bindIntents() {
 
-        val loginViewStateObs = intent (CustomersView::loadCustomersIntent)
+        val allIntents = intent (CustomersView::loadCustomersIntent)
                 .switchMap { getCustomersUseCase.getCustomers()}
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 
-        subscribeViewState(loginViewStateObs, CustomersView::render)
+        subscribeViewState(allIntents, CustomersView::render)
     }
 }

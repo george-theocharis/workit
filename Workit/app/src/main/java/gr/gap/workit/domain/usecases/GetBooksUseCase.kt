@@ -3,8 +3,9 @@ package gr.gap.workit.domain.usecases
 import gr.gap.workit.data.network.BooksApi
 import gr.gap.workit.presentation.BooksView.BooksViewState
 import io.reactivex.Observable
+import javax.inject.Inject
 
-class GetBooksUseCase(private val booksApi: BooksApi) {
+class GetBooksUseCase @Inject constructor(private val booksApi: BooksApi) {
 
     fun getBooks(id: Int): Observable<BooksViewState> =
         booksApi.getBooksOfCustomer(id)
