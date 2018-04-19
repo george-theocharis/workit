@@ -30,6 +30,7 @@
         </activity>
 
         <activity android:name=".presentation.AddCustomerView.AddCustomerActivity"/>
+        <activity android:name=".presentation.CustomerDetailsView.CustomerDetailsActivity" />
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package gr.gap.workit.presentation.CustomersView
 
 import android.content.Context
+import android.content.Intent
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -9,6 +11,8 @@ import com.hannesdorfmann.mosby3.mvi.layout.MviFrameLayout
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
 import gr.gap.workit.domain.model.Customer
+import gr.gap.workit.presentation.CustomerDetailsView.CustomerDetailsActivity
+import gr.gap.workit.presentation.HomeView.HomeActivity
 import gr.gap.workit.presentation.LoginView.CustomersPresenter
 import gr.gap.workit.presentation.LoginView.CustomersView
 import gr.gap.workit.presentation.LoginView.CustomersViewState
@@ -34,6 +38,13 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
         customersRecycler.layoutManager = layoutManager
 
         customersRecycler.adapter = customersAdapter
+
+        customersAdapter.customerClickObservable.subscribe { navigateToCustomerDetails() }
+    }
+
+    private fun navigateToCustomerDetails() {
+        val intent = Intent(this.context, CustomerDetailsActivity::class.java)
+        (context as HomeActivity)?.startActivity(intent)
     }
 
     override fun loadCustomersIntent(): Observable<Boolean> = Observable.just(true)
