@@ -1,5 +1,6 @@
 package gr.gap.workit.presentation.CustomerDetailsView
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
 import io.reactivex.Observable
+import kotlinx.android.synthetic.main.activity_customer_details.*
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
 
@@ -22,7 +24,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     override fun render(state: CustomerDetailsViewState) {
         when (state){
             is CustomerDetailsViewState.Loading -> renderLoading()
-            is CustomerDetailsViewState.Data -> renderData()
+            is CustomerDetailsViewState.Data -> renderData(state)
             is CustomerDetailsViewState.Error -> renderError(state)
         }
     }
@@ -31,8 +33,8 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
 
     }
 
-    private fun renderData(){
-
+    private fun renderData(state: CustomerDetailsViewState.Data){
+        (context as CustomerDetailsActivity)?.UpdateHeader(state.customer)
     }
 
     private fun renderError(state: CustomerDetailsViewState.Error){

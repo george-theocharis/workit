@@ -1,10 +1,9 @@
 package gr.gap.workit.presentation.CustomerDetailsView
 
-import android.app.Fragment
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import gr.gap.workit.R
+import gr.gap.workit.domain.model.Customer
 import gr.gap.workit.presentation.BooksView.BooksFragment
 import kotlinx.android.synthetic.main.activity_customer_details.*
 
@@ -33,6 +32,11 @@ class CustomerDetailsActivity : AppCompatActivity() {
                 .replace(R.id.fragment_container, fragment, tag).commit()
 
         return true
+    }
+
+    fun UpdateHeader(customer: Customer) {
+        headerName.text= "${customer.firstName} ${customer.lastName}"
+        customerIcon.text = customer.firstName[0].toString() + customer.lastName[0].toString()
     }
 }
 
