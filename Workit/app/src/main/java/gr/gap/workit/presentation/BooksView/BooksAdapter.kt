@@ -10,16 +10,13 @@ import kotlinx.android.synthetic.main.list_element_book.view.*
 
 class BooksAdapter(val books : ArrayList<Book>): RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.list_element_book, parent, false)
     )
 
     override fun getItemCount(): Int = books.count()
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(books[position])
-    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =  holder.bindItems(books[position])
 
     fun updateItems(books: List<Book>) {
         this.books.clear()

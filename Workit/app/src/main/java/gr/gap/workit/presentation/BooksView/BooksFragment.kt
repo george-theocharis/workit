@@ -21,13 +21,17 @@ class BooksFragment: MviFragment<BooksView, BooksPresenter>(), BooksView{
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_books, container, false)
 
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         val layoutManager = LinearLayoutManager(this.context, VERTICAL,false)
 
         booksRecycler.layoutManager = layoutManager
 
         booksRecycler.adapter = booksAdapter
-
-        return view
     }
 
     override fun loadBooksIntent(): Observable<Boolean> = Observable.just(true)
