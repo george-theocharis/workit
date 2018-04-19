@@ -4,8 +4,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
-import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
 import gr.gap.workit.domain.model.Customer
 import io.reactivex.Observable
@@ -14,7 +12,7 @@ import kotlinx.android.synthetic.main.list_element_customer.view.*
 import java.util.*
 
 
-class CustomersAdapter(val customers : ArrayList<Customer>): RecyclerView.Adapter<CustomersAdapter.ViewHolder>() {
+class CustomersAdapter(private val customers : ArrayList<Customer>): RecyclerView.Adapter<CustomersAdapter.ViewHolder>() {
 
     private val customerClickSubject = PublishSubject.create<Customer>()
 

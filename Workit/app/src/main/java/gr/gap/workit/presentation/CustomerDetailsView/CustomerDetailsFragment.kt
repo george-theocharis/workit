@@ -1,6 +1,5 @@
 package gr.gap.workit.presentation.CustomerDetailsView
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
 import io.reactivex.Observable
-import kotlinx.android.synthetic.main.activity_customer_details.*
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
 
