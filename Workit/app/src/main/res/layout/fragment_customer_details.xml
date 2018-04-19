@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/scrollLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/phonesLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            >
+
+            <ImageView
+                android:id="@+id/phonesImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                app:srcCompat="@drawable/ic_call"
+                android:tint="@color/colorPrimary"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/phonesList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="8dp"
+                tools:listitem="@layout/list_element_customer_phone"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/phonesDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+
+        <LinearLayout
+            android:id="@+id/emailsLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginTop="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/emailsImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                app:srcCompat="@drawable/ic_email"
+                android:tint="@color/colorPrimary"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/emailsList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="8dp"
+                tools:listitem="@layout/list_element_customer_email"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/emailsDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+
+        <LinearLayout
+            android:id="@+id/locationsLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginTop="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/locationsImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                app:srcCompat="@drawable/ic_location"
+                android:tint="@color/colorPrimary"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/locationsList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="8dp"
+                tools:listitem="@layout/list_element_customer_address" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/locationsDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

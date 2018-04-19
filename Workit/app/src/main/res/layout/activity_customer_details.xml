@@ -20,7 +20,6 @@
         android:gravity="center"
         android:background="@color/colorPrimary"
         >
-
         <TextView
             android:id="@+id/customerIcon"
             android:layout_width="50dp"
@@ -33,7 +32,6 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textColor="@android:color/white"
             />
-
         <TextView
             android:id="@+id/headerName"
             android:layout_width="wrap_content"
@@ -42,145 +40,13 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textColor="@android:color/white"
             />
-
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/header">
-
-        <ScrollView
-            android:id="@+id/scroll"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-            <LinearLayout
-                android:id="@+id/scrollLayout"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                >
-
-                <LinearLayout
-                    android:id="@+id/phonesLayout"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    >
-
-                    <ImageView
-                        android:id="@+id/phonesImage"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_call"
-                        android:tint="@color/colorPrimary"
-                        />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/phonesList"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:padding="8dp"
-                        tools:listitem="@layout/list_element_customer_phone"
-                        tools:itemCount="2"
-                        />
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/phonesDivider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"
-                    />
-
-                <LinearLayout
-                    android:id="@+id/emailsLayout"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:layout_marginTop="8dp"
-                    >
-
-                    <ImageView
-                        android:id="@+id/emailsImage"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_email"
-                        android:tint="@color/colorPrimary"
-                        />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/emailsList"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:padding="8dp"
-                        tools:itemCount="1"
-                        tools:listitem="@layout/list_element_customer_email"
-                        />
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/emailsDivider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"
-                    />
-
-                <LinearLayout
-                    android:id="@+id/locationsLayout"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:layout_marginTop="8dp"
-                    >
-
-                    <ImageView
-                        android:id="@+id/locationsImage"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingTop="8dp"
-                        app:srcCompat="@drawable/ic_location"
-                        android:tint="@color/colorPrimary"
-                        />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/locationsList"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="4"
-                        android:padding="8dp"
-                        tools:itemCount="1"
-                        tools:listitem="@layout/list_element_customer_address" />
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/locationsDivider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"
-                    />
-
-            </LinearLayout>
-
-        </ScrollView>
-
-    </FrameLayout>
+        android:layout_below="@+id/header"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"
