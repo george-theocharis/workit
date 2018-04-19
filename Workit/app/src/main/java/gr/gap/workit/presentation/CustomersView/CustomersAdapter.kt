@@ -4,8 +4,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
-import com.jakewharton.rxbinding2.view.RxView
 import gr.gap.workit.R
 import gr.gap.workit.domain.model.Customer
 import io.reactivex.Observable
@@ -46,13 +44,6 @@ class CustomersAdapter(val customers : ArrayList<Customer>): RecyclerView.Adapte
 
             itemView.customerName.text = customer.firstName + " " + customer.lastName
             itemView.customerIcon.text = customer.firstName[0].toString() + customer.lastName[0].toString()
-
-           // itemView.nameLayout.setOnClickListener{
-           //     if(!itemView.actions.isVisible)
-           //         itemView.actions.visibility = View.VISIBLE
-           //     else
-           //         itemView.actions.visibility = View.GONE
-           // }
         }
     }
 }

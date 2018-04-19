@@ -16,6 +16,45 @@
         >
 
         <LinearLayout
+            android:id="@+id/emailLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginTop="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/emailsImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="8dp"
+                app:srcCompat="@drawable/ic_email"
+                android:tint="@color/colorPrimary"
+                />
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="8dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/black"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/emailsDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            />
+
+        <LinearLayout
             android:id="@+id/phonesLayout"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -48,43 +87,7 @@
             android:id="@+id/phonesDivider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            />
-
-        <LinearLayout
-            android:id="@+id/emailsLayout"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
             android:layout_marginTop="8dp"
-            >
-
-            <ImageView
-                android:id="@+id/emailsImage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingTop="8dp"
-                app:srcCompat="@drawable/ic_email"
-                android:tint="@color/colorPrimary"
-                />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/emailsList"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:padding="8dp"
-                tools:listitem="@layout/list_element_customer_email"
-                />
-
-        </LinearLayout>
-
-        <View
-            android:id="@+id/emailsDivider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
             android:background="@android:color/darker_gray"
             />
 
@@ -121,6 +124,7 @@
             android:id="@+id/locationsDivider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginTop="8dp"
             android:background="@android:color/darker_gray"
             />
 
