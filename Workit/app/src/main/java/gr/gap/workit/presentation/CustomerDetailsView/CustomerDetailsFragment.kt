@@ -9,9 +9,11 @@ import android.widget.LinearLayout
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
+import gr.gap.workit.domain.model.CustomerPhone
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_customer_details.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
 
@@ -67,9 +69,9 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     private fun renderData(state: CustomerDetailsViewState.Data){
         (context as CustomerDetailsActivity).UpdateHeader(state.customer)
 
-        phonesAdapter.updateList(state.customer.phones!!)
+        phonesAdapter.updateList(state.customer?.phones ?: ArrayList())
 
-        locationsAdapter.updateList(state.customer.addresses!!)
+        locationsAdapter.updateList(state.customer?.addresses ?: ArrayList())
 
         emailText.text = state.customer.email
     }
