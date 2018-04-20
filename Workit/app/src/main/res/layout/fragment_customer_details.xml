@@ -129,6 +129,17 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/addMorePhonesImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:tint="@android:color/darker_gray"
+            app:srcCompat="@drawable/ic_add_circle"
+            />
+
         <View
             android:id="@+id/phonesDivider"
             android:layout_width="match_parent"
@@ -188,6 +199,17 @@
                 />
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/addMoreAddressesImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:tint="@android:color/darker_gray"
+            app:srcCompat="@drawable/ic_add_circle"
+            />
 
         <View
             android:id="@+id/addressesDivider"
