@@ -14,13 +14,16 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_customer_details)
 
+
+        val customerId = intent.getIntExtra("customerId", 0)
+
         if(savedInstanceState == null)
             supportFragmentManager.beginTransaction()
-                    .add(R.id.fragment_container, CustomerDetailsFragment.create(1), "Info").commit()
+                    .add(R.id.fragment_container, CustomerDetailsFragment.create(customerId), "Info").commit()
 
         bottom_navigation.setOnNavigationItemSelectedListener {
                 when(it.itemId){
-                    R.id.action_info ->  addFragment(CustomerDetailsFragment.create(2), "Info")
+                    R.id.action_info ->  addFragment(CustomerDetailsFragment.create(customerId), "Info")
                     R.id.action_books -> addFragment(BooksFragment(), "Books")
                     else -> true
                 }

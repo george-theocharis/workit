@@ -39,11 +39,12 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
 
         customersRecycler.adapter = customersAdapter
 
-        customersAdapter.customerClickObservable.subscribe { navigateToCustomerDetails() }
+        customersAdapter.customerClickObservable.subscribe { navigateToCustomerDetails(it?.id) }
     }
 
-    private fun navigateToCustomerDetails() {
+    private fun navigateToCustomerDetails(customerId: Int?) {
         val intent = Intent(this.context, CustomerDetailsActivity::class.java)
+        intent.putExtra("customerId", customerId)
         (context as HomeActivity).startActivity(intent)
     }
 

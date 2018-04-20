@@ -47,11 +47,5 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
         overridePendingTransition(R.anim.slide_up, R.anim.stay)
     }
-
-    fun navigateToCustomerDetails(){
-        val intent = Intent(this, CustomerDetailsActivity::class.java)
-        startActivity(intent)
-        overridePendingTransition(R.anim.slide_up, R.anim.stay)
-    }
 }
 

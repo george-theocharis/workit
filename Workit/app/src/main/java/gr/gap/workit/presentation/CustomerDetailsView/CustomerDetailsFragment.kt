@@ -26,6 +26,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
 
             val bundle = Bundle()
             bundle.putInt("customerId", customerId)
+
             fragment.arguments = bundle
 
             return fragment
