@@ -37,12 +37,12 @@ class TransactionsAdapter(private val transactions : ArrayList<Transaction>): Re
 
         fun bindItems(transaction: Transaction) {
 
-            if(transaction.typeId == 1)
+            if (transaction.typeId == 1)
                 itemView.type.text = "Οφειλή:"
             else
                 itemView.type.text = "Πληρωμή:"
 
-            itemView.amount.text = transaction.amount.toString()
+            itemView.amount.text = transaction.amount.toString() + " " + transaction.currency
             itemView.date.text = transaction.createdAt
             itemView.note.text = transaction.notes
 
