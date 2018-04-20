@@ -1,6 +1,7 @@
 package gr.gap.workit.data.network
 
 import gr.gap.workit.domain.model.Customer
+import gr.gap.workit.domain.model.Transaction
 import retrofit2.http.GET
 import io.reactivex.Observable
 import okhttp3.ResponseBody
@@ -18,4 +19,7 @@ interface CustomersApi {
 
     @POST("customer")
     fun addCustomer(@Body customer: Customer): Observable<ResponseBody>
+
+    @GET("customers/{customer_id}/transactions")
+    fun getCustomerTransactions(@Path("customer_id") customerId: Int? = null): Observable<List<Transaction>>
 }
