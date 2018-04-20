@@ -1,5 +1,6 @@
 package gr.gap.workit.presentation.CustomersView
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
@@ -45,7 +46,7 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
     private fun navigateToCustomerDetails(customerId: Int?) {
         val intent = Intent(this.context, CustomerDetailsActivity::class.java)
         intent.putExtra("customerId", customerId)
-        (context as HomeActivity).startActivity(intent)
+        (context as Activity).startActivity(intent)
     }
 
     override fun loadCustomersIntent(): Observable<Boolean> = Observable.just(true)
