@@ -44,6 +44,29 @@
                 android:textColor="@android:color/black"
                 />
 
+            <TextView
+                android:id="@+id/addEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="8dp"
+                android:text="@string/add_email"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/darker_gray"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:id="@+id/addEmailImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:tint="@android:color/darker_gray"
+                app:srcCompat="@drawable/ic_add_circle"
+                />
+
         </LinearLayout>
 
         <View
@@ -60,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:layout_marginTop="8dp"
             >
 
             <ImageView
@@ -81,6 +105,28 @@
                 tools:listitem="@layout/list_element_customer_phone"
                 />
 
+            <TextView
+                android:id="@+id/addPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="8dp"
+                android:text="@string/add_phone"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/darker_gray"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/addPhoneImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:tint="@android:color/darker_gray"
+                app:srcCompat="@drawable/ic_add_circle"
+                />
+
         </LinearLayout>
 
         <View
@@ -92,7 +138,7 @@
             />
 
         <LinearLayout
-            android:id="@+id/locationsLayout"
+            android:id="@+id/addressesLayout"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,7 +147,7 @@
             >
 
             <ImageView
-                android:id="@+id/locationsImage"
+                android:id="@+id/addressesImage"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -111,17 +157,40 @@
                 />
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/locationsList"
+                android:id="@+id/addressesList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:padding="8dp"
                 tools:listitem="@layout/list_element_customer_address" />
 
+            <TextView
+                android:id="@+id/addAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="8dp"
+                android:text="@string/add_address"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/darker_gray"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:id="@+id/addAddressImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:tint="@android:color/darker_gray"
+                app:srcCompat="@drawable/ic_add_circle"
+                />
+
         </LinearLayout>
 
         <View
-            android:id="@+id/locationsDivider"
+            android:id="@+id/addressesDivider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
