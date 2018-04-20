@@ -40,5 +40,8 @@
     <string name="address_number">Address No</string>
     <string name="zip">Post Code</string>
     <string name="phone_tag">Type</string>
+    <string name="add_phone">Add phone number</string>
+    <string name="add_address">Add address</string>
+    <string name="add_email">Add email</string>
 
 </resources>

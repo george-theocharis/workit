@@ -1,11 +1,14 @@
 package gr.gap.workit.presentation.CustomerDetailsView
 
+import android.content.res.Resources
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
@@ -48,8 +51,8 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
         phonesList.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         phonesList.adapter = phonesAdapter
 
-        locationsList.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-        locationsList.adapter = locationsAdapter
+        addressesList.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        addressesList.adapter = locationsAdapter
     }
 
     override fun loadCustomerDetailsIntent(): Observable<Int> = Observable.just(customerId)
@@ -69,15 +72,41 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     private fun renderData(state: CustomerDetailsViewState.Data){
         (context as CustomerDetailsActivity).UpdateHeader(state.customer)
 
-        phonesAdapter.updateList(state.customer?.phones ?: ArrayList())
+        if (state.customer.email == null || state.customer.email.isBlank())
+            showAddEmail()
+        else
+            emailText.text = state.customer.email
 
-        locationsAdapter.updateList(state.customer?.addresses ?: ArrayList())
+        if (state.customer?.phones != null)
+            phonesAdapter.updateList(state.customer?.phones)
+        else
+            showAddPhone()
 
-        emailText.text = state.customer.email
+        if (state.customer?.addresses != null)
+            locationsAdapter.updateList(state.customer?.addresses)
+        else
+            showAddAddress()
     }
 
     private fun renderError(state: CustomerDetailsViewState.Error){
 
     }
 
+    private fun showAddEmail(){
+        emailText.visibility = View.GONE
+        addEmail.visibility = View.VISIBLE
+        addEmailImage.visibility = View.VISIBLE
+    }
+
+    private fun showAddPhone(){
+        phonesList.visibility = View.GONE
+        addPhone.visibility = View.VISIBLE
+        addPhoneImage.visibility = View.VISIBLE
+    }
+
+    private fun showAddAddress(){
+        addressesList.visibility = View.GONE
+        addAddress.visibility = View.VISIBLE
+        addAddressImage.visibility = View.VISIBLE
+    }
 }

@@ -40,5 +40,8 @@
     <string name="address_number">Αριθμός</string>
     <string name="zip">Τ.Κ.</string>
     <string name="phone_tag">Τύπος</string>
+    <string name="add_phone">Προσθήκη τηλεφώνου</string>
+    <string name="add_address">Προσθήκη διεύθυνσης</string>
+    <string name="add_email">Προσθήκη email</string>
 
 </resources>
