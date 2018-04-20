@@ -30,6 +30,7 @@ ext {
         dagger = 2.15
         retrofit = "2.4.0"
         moshi="1.5.0"
+        okhttp="3.10.0"
 }
 
 dependencies {
@@ -47,6 +48,7 @@ dependencies {
         implementation "com.squareup.retrofit2:retrofit:$retrofit"
         implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
         implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+        implementation "com.squareup.okhttp3:okhttp:$okhttp"
         implementation "com.squareup.moshi:moshi-kotlin:$moshi"
         implementation 'com.hannesdorfmann.mosby3:mvi:3.1.0'
         implementation "io.reactivex.rxjava2:rxjava:2.1.12"

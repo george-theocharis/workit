@@ -8,9 +8,11 @@ import gr.gap.workit.data.network.BooksApi
 import gr.gap.workit.data.network.CustomersApi
 import gr.gap.workit.data.network.UserApi
 import io.reactivex.schedulers.Schedulers
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -44,11 +46,22 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(moshi: Moshi): Retrofit =
+    fun provideOkHttpClient() : OkHttpClient =
+            OkHttpClient()
+                         .newBuilder()
+                         .connectTimeout(10, TimeUnit.SECONDS)
+                         .writeTimeout(10, TimeUnit.SECONDS)
+                         .readTimeout(30, TimeUnit.SECONDS)
+                         .build()
+
+    @Singleton
+    @Provides
+    fun provideRetrofit(moshi: Moshi, client: OkHttpClient): Retrofit =
             Retrofit.Builder()
-                    .baseUrl(Companion.BaseUrl)
+                    .baseUrl(BaseUrl)
                     .addConverterFactory(MoshiConverterFactory.create(moshi))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+                    .client(client)
                     .build()
 
 
