@@ -15,6 +15,8 @@
     <string name="send">Send</string>
 
     <!-- Register -->
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="terms"><![CDATA[Terms & Conditions]]></string>
     <string name="register_button">Register</string>
@@ -30,13 +32,13 @@
     <string name="phone">Phone</string>
     <string name="location">Location</string>
     <string name="visibility">Visibility</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
-    <string name="address">Address</string>
-    <string name="address_number">Address No</string>
-    <string name="zip">Zip Code</string>
-    <string name="phone_tag">Tag</string>
+
+    <!-- Customer -->
     <string name="general">General</string>
     <string name="books">Books</string>
+    <string name="address">Address</string>
+    <string name="address_number">Address No</string>
+    <string name="zip">Post Code</string>
+    <string name="phone_tag">Type</string>
 
 </resources>
