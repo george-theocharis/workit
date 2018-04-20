@@ -25,6 +25,7 @@ class CustomerDetailsActivity : AppCompatActivity() {
                 when(it.itemId){
                     R.id.action_info ->  addFragment(CustomerDetailsFragment.create(customerId), "Info")
                     R.id.action_books -> addFragment(BooksFragment(), "Books")
+                    R.id.action_transactions -> addFragment(TransactionsFragment(), "Transactions")
                     else -> true
                 }
         }

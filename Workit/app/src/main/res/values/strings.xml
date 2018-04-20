@@ -43,5 +43,6 @@
     <string name="add_phone">Add phone number</string>
     <string name="add_address">Add address</string>
     <string name="add_email">Add email</string>
+    <string name="transactions">Transactions</string>
 
 </resources>

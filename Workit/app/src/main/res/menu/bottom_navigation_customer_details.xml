@@ -14,9 +14,10 @@
         android:title="@string/books"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_debts"
+        android:id="@+id/action_transactions"
         android:enabled="true"
         android:icon="@drawable/ic_location"
+        android:title="@string/transactions"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_payments"
