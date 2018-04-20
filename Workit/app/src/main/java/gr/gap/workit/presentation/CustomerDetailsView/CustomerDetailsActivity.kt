@@ -14,8 +14,9 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_customer_details)
 
-        supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, CustomerDetailsFragment(), "Info").commit()
+        if(savedInstanceState == null)
+            supportFragmentManager.beginTransaction()
+                    .add(R.id.fragment_container, CustomerDetailsFragment(), "Info").commit()
 
         bottom_navigation.setOnNavigationItemSelectedListener {
                 when(it.itemId){

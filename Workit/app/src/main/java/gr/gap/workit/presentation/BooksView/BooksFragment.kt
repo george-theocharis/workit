@@ -9,6 +9,7 @@ import android.widget.LinearLayout.VERTICAL
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
+import gr.gap.workit.presentation.CustomerDetailsView.CustomerDetailsActivity
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_books.*
 
@@ -49,7 +50,6 @@ class BooksFragment: MviFragment<BooksView, BooksPresenter>(), BooksView{
     }
 
     private fun renderData(state: BooksViewState.Data){
-
         booksAdapter.updateItems(state.books)
     }
 

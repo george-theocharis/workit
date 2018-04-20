@@ -33,4 +33,12 @@
     <string name="location">Τοποθεσία</string>
     <string name="visibility">Ορατότητα</string>
 
+    <!-- Customer -->
+    <string name="general">Γενικά</string>
+    <string name="books">Βιβλία</string>
+    <string name="address">Διεύθυνση</string>
+    <string name="address_number">Αριθμός</string>
+    <string name="zip">Τ.Κ.</string>
+    <string name="phone_tag">Τύπος</string>
+
 </resources>
