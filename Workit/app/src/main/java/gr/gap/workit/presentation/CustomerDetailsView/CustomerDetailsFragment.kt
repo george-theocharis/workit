@@ -100,12 +100,14 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
 
     private fun showAddPhone(){
         phonesList.visibility = View.GONE
+        addMorePhonesImage.visibility = View.GONE
         addPhone.visibility = View.VISIBLE
         addPhoneImage.visibility = View.VISIBLE
     }
 
     private fun showAddAddress(){
         addressesList.visibility = View.GONE
+        addMoreAddressesImage.visibility = View.GONE
         addAddress.visibility = View.VISIBLE
         addAddressImage.visibility = View.VISIBLE
     }

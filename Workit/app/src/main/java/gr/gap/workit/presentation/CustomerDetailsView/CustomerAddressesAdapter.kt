@@ -34,8 +34,8 @@ class CustomerAddressesAdapter(val addresses: ArrayList<CustomerAddress>) : Recy
 
             itemView.setOnClickListener { listener.onNext(address) }
 
-            itemView.address.text = address.address + " " + address.addressNumber + ", " + address.postCode
-            itemView.city.text = address.city
+            itemView.address.text = address.address + " " + address.addressNumber
+            itemView.city.text = address.city + ", " + address.postCode
             itemView.type.text = address.title
         }
     }
