@@ -5,6 +5,6 @@ import io.reactivex.Observable
 
 interface CustomerDetailsView : MvpView {
 
-    fun loadCustomerDetailsIntent(): Observable<Boolean>
+    fun loadCustomerDetailsIntent(): Observable<Int>
     fun render(state: CustomerDetailsViewState)
 }
