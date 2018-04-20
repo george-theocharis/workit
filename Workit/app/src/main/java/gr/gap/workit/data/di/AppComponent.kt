@@ -8,6 +8,7 @@ import gr.gap.workit.presentation.BooksView.BooksPresenter
 import gr.gap.workit.presentation.CustomerDetailsView.CustomerDetailsPresenter
 import gr.gap.workit.presentation.LoginView.CustomersPresenter
 import gr.gap.workit.presentation.LoginView.LoginPresenter
+import gr.gap.workit.presentation.PagesView.PagesPresenter
 import gr.gap.workit.presentation.RegisterView.RegisterPresenter
 import javax.inject.Singleton
 
@@ -27,4 +28,5 @@ interface AppComponent {
     fun addCustomerPresenter(): AddCustomerPresenter
     fun customerDetailsPresenter(): CustomerDetailsPresenter
     fun booksPresenter(): BooksPresenter
+    fun pagesPresenter(): PagesPresenter
 }
