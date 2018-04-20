@@ -1,3 +1,5 @@
 package gr.gap.workit.domain.model
 
-data class Transaction(val id: Int?, val typeId: Int?, val notes: String?, val amount: Float?, val createdAt: String?)
+import com.squareup.moshi.Json
+
+data class Transaction(val id: Int?, @Json(name="type_id")val typeId: Int?, val notes: String?, val amount: Float?, @Json(name="created_at")val createdAt: String?)

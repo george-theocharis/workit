@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import gr.gap.workit.R
 import gr.gap.workit.domain.model.Customer
 import gr.gap.workit.presentation.BooksView.BooksFragment
+import gr.gap.workit.presentation.TransactionsView.TransactionsFragment
 import kotlinx.android.synthetic.main.activity_customer_details.*
 
 class CustomerDetailsActivity : AppCompatActivity() {

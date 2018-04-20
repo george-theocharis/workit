@@ -10,6 +10,7 @@ import gr.gap.workit.domain.model.Transaction
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.list_element_book.view.*
+import kotlinx.android.synthetic.main.list_element_transactions.view.*
 
 class TransactionsAdapter(private val transactions : ArrayList<Transaction>): RecyclerView.Adapter<TransactionsAdapter.ViewHolder>() {
 
@@ -19,7 +20,7 @@ class TransactionsAdapter(private val transactions : ArrayList<Transaction>): Re
         get() = transactionsClickSubject
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.list_element_book, parent, false), transactionsClickSubject
+            LayoutInflater.from(parent.context).inflate(R.layout.list_element_transactions, parent, false), transactionsClickSubject
     )
 
     override fun getItemCount(): Int = transactions.count()
@@ -36,8 +37,14 @@ class TransactionsAdapter(private val transactions : ArrayList<Transaction>): Re
 
         fun bindItems(transaction: Transaction) {
 
-            itemView.bookTitle.text = transaction.notes
-            itemView.bookCreatedAt.text = transaction.createdAt
+            if(transaction.typeId == 1)
+                itemView.type.text = "Οφειλή:"
+            else
+                itemView.type.text = "Πληρωμή:"
+
+            itemView.amount.text = transaction.amount.toString()
+            itemView.date.text = transaction.createdAt
+            itemView.note.text = transaction.notes
 
             itemView.setOnClickListener {
                 listener.onNext(transaction)
