@@ -20,7 +20,12 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
         bottom_navigation.setOnNavigationItemSelectedListener {
                 when(it.itemId){
-                    R.id.action_info -> addFragment(CustomerDetailsFragment(), "Info")
+                    R.id.action_info -> {
+
+                        val fragment = CustomerDetailsFragment()
+                        CustomerDetailsFragment.customerId = 1
+                        addFragment(fragment, "Info")
+                    }
                     R.id.action_books -> addFragment(BooksFragment(), "Books")
                     else -> true
                 }

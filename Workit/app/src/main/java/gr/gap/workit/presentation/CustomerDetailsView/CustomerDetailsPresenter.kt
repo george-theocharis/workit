@@ -10,7 +10,7 @@ class CustomerDetailsPresenter @Inject constructor(private val getCustomerDetail
     override fun bindIntents() {
 
         val allIntents = intent (CustomerDetailsView::loadCustomerDetailsIntent)
-                .switchMap { getCustomerDetailsUseCase.getCustomers()}
+                .switchMap { getCustomerDetailsUseCase.getCustomer(it)}
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 

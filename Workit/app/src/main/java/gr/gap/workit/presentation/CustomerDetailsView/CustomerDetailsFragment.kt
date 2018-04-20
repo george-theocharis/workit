@@ -14,6 +14,10 @@ import kotlinx.android.synthetic.main.fragment_customer_details.*
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
 
+    companion object {
+        var customerId: Int = 0
+    }
+
     private val phonesAdapter: CustomerPhonesAdapter = CustomerPhonesAdapter(ArrayList())
     private val locationsAdapter: CustomerAddressesAdapter = CustomerAddressesAdapter(ArrayList())
 
@@ -33,7 +37,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
         locationsList.adapter = locationsAdapter
     }
 
-    override fun loadCustomerDetailsIntent(): Observable<Boolean> = Observable.just(true)
+    override fun loadCustomerDetailsIntent(): Observable<Int> = Observable.just(customerId)
 
     override fun render(state: CustomerDetailsViewState) {
         when (state){
