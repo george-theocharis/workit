@@ -11,19 +11,31 @@ import gr.gap.workit.R
 import gr.gap.workit.data.di.App
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_customer_details.*
+import java.util.*
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
 
-    companion object {
-        var customerId: Int = 0
-    }
-
     private val phonesAdapter: CustomerPhonesAdapter = CustomerPhonesAdapter(ArrayList())
     private val locationsAdapter: CustomerAddressesAdapter = CustomerAddressesAdapter(ArrayList())
+    private var customerId: Int? = 0
+
+    companion object {
+        fun create(customerId: Int) : CustomerDetailsFragment {
+
+            val fragment = CustomerDetailsFragment()
+
+            val bundle = Bundle()
+            bundle.putInt("customerId", customerId)
+            fragment.arguments = bundle
+
+            return fragment
+        }
+    }
 
     override fun createPresenter(): CustomerDetailsPresenter = App.component.customerDetailsPresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        customerId = arguments?.getInt("customerId")
         return inflater.inflate(R.layout.fragment_customer_details,container,false)
     }
 
@@ -52,7 +64,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     }
 
     private fun renderData(state: CustomerDetailsViewState.Data){
-        (context as CustomerDetailsActivity)?.UpdateHeader(state.customer)
+        (context as CustomerDetailsActivity).UpdateHeader(state.customer)
 
         phonesAdapter.updateList(state.customer.phones!!)
 

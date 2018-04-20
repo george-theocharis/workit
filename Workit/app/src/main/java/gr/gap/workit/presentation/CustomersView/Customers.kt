@@ -44,7 +44,7 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
 
     private fun navigateToCustomerDetails() {
         val intent = Intent(this.context, CustomerDetailsActivity::class.java)
-        (context as HomeActivity)?.startActivity(intent)
+        (context as HomeActivity).startActivity(intent)
     }
 
     override fun loadCustomersIntent(): Observable<Boolean> = Observable.just(true)

@@ -16,16 +16,11 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
         if(savedInstanceState == null)
             supportFragmentManager.beginTransaction()
-                    .add(R.id.fragment_container, CustomerDetailsFragment(), "Info").commit()
+                    .add(R.id.fragment_container, CustomerDetailsFragment.create(1), "Info").commit()
 
         bottom_navigation.setOnNavigationItemSelectedListener {
                 when(it.itemId){
-                    R.id.action_info -> {
-
-                        val fragment = CustomerDetailsFragment()
-                        CustomerDetailsFragment.customerId = 1
-                        addFragment(fragment, "Info")
-                    }
+                    R.id.action_info ->  addFragment(CustomerDetailsFragment.create(2), "Info")
                     R.id.action_books -> addFragment(BooksFragment(), "Books")
                     else -> true
                 }
