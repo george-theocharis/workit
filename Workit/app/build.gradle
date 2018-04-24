@@ -36,7 +36,6 @@ ext {
 dependencies {
 
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
         implementation 'androidx.core:core-ktx:0.3'
         implementation 'com.android.support:appcompat-v7:27.1.1'
         implementation 'com.android.support.constraint:constraint-layout:1.1.0'
@@ -59,5 +58,6 @@ dependencies {
         kapt "com.google.dagger:dagger-compiler:$dagger"
         debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
         releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testImplementation "org.mockito:mockito-core:2.+"
 }
 
