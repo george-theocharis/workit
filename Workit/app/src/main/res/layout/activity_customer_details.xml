@@ -65,7 +65,7 @@
         app:backgroundTint="@color/colorPrimary"
         app:elevation="12dp"
         app:fabSize="normal"
-        app:srcCompat="@drawable/ic_add_circle" />
+        app:srcCompat="@drawable/ic_add" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"
