@@ -1,4 +1,4 @@
-package gr.gap.workit.LoginPresenterTest
+package gr.gap.workit.test.Login
 
 import android.app.Application
 import gr.gap.workit.data.di.DaggerAppComponent

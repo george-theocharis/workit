@@ -1,4 +1,4 @@
-package gr.gap.workit.LoginPresenterTest
+package gr.gap.workit.test.Login
 
 import gr.gap.workit.presentation.LoginView.LoginPresenter
 import gr.gap.workit.presentation.LoginView.LoginView
