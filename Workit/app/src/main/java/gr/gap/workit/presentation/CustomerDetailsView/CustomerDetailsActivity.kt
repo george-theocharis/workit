@@ -1,6 +1,8 @@
 package gr.gap.workit.presentation.CustomerDetailsView
 
 import android.os.Bundle
+import android.support.transition.Explode
+import android.support.transition.Fade
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import gr.gap.workit.R
@@ -47,8 +49,9 @@ class CustomerDetailsActivity : AppCompatActivity() {
             else -> fab.show()
         }
 
+        fragment.exitTransition = Fade()
+
         supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
                 .replace(R.id.fragment_container, fragment, tag)
                 .commit()
 
