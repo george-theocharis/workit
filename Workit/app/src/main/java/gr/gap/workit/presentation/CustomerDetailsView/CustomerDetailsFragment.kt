@@ -1,21 +1,16 @@
 package gr.gap.workit.presentation.CustomerDetailsView
 
-import android.content.res.Resources
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.TextView
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
-import gr.gap.workit.domain.model.CustomerPhone
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_customer_details.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetailsPresenter>(), CustomerDetailsView {
@@ -70,7 +65,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     }
 
     private fun renderData(state: CustomerDetailsViewState.Data){
-        (context as CustomerDetailsActivity).UpdateHeader(state.customer)
+        (context as CustomerDetailsActivity).updateHeaderInfo(state.customer)
 
         if (state.customer.email == null || state.customer.email.isBlank())
             showAddEmail()

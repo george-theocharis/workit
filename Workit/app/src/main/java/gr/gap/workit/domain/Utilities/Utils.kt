@@ -1,4 +1,4 @@
-package gr.gap.workit.domain.Utilities
+package gr.gap.workit.domain.utilities
 
 
 class Utils{

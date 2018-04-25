@@ -4,6 +4,7 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import gr.gap.workit.presentation.AddCustomerView.AddCustomerPresenter
+import gr.gap.workit.presentation.AppointmentsView.AppointmentsPresenter
 import gr.gap.workit.presentation.BooksView.BooksPresenter
 import gr.gap.workit.presentation.CustomerDetailsView.CustomerDetailsPresenter
 import gr.gap.workit.presentation.LoginView.CustomersPresenter
@@ -31,4 +32,5 @@ interface AppComponent {
     fun booksPresenter(): BooksPresenter
     fun pagesPresenter(): PagesPresenter
     fun transactionsPresenter(): TransactionsPresenter
+    fun appointmentsPresenter(): AppointmentsPresenter
 }
