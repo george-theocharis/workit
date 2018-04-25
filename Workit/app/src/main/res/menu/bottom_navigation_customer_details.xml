@@ -23,5 +23,6 @@
         android:id="@+id/action_appointments"
         android:enabled="true"
         android:icon="@drawable/ic_email"
+        android:title="@string/appointments"
         app:showAsAction="ifRoom" />
 </menu>

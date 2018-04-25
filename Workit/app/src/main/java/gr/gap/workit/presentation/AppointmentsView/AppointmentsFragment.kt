@@ -9,6 +9,7 @@ import android.widget.LinearLayout.VERTICAL
 import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
+import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_appointments.*
 
@@ -30,7 +31,7 @@ class AppointmentsFragment: MviFragment<AppointmentsView, AppointmentsPresenter>
 
         appointmentsRecycler.layoutManager = layoutManager
 
-        subscription = appointmentsAdapter.selectedBookObservable.subscribe { navigateToPages(it?.id) }
+        subscription = appointmentsAdapter.selectedAppointmentObservable.subscribe {}
 
         appointmentsRecycler.adapter = appointmentsAdapter
     }
@@ -39,11 +40,8 @@ class AppointmentsFragment: MviFragment<AppointmentsView, AppointmentsPresenter>
         super.onDestroy()
         subscription?.dispose()
     }
-
-    private fun navigateToPages(bookId: Int?) {
-
-    }
-
+    
+    override fun loadAppointmentsIntent(): Observable<Int> = Observable.just(1)
 
     override fun render(state: AppointmentsViewState) {
         when (state){

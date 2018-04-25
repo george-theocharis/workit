@@ -13,7 +13,7 @@ class AppointmentsAdapter(val appointments : ArrayList<Appointment>): RecyclerVi
 
     private val appointmentClickSubject = PublishSubject.create<Appointment>()
 
-    val selectedBookObservable: Observable<Appointment>
+    val selectedAppointmentObservable: Observable<Appointment>
         get() = appointmentClickSubject
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(

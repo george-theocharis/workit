@@ -1,5 +1,6 @@
 package gr.gap.workit.data.network
 
+import gr.gap.workit.domain.model.Appointment
 import gr.gap.workit.domain.model.Customer
 import gr.gap.workit.domain.model.Transaction
 import retrofit2.http.GET
@@ -22,4 +23,7 @@ interface CustomersApi {
 
     @GET("customers/{customer_id}/transactions")
     fun getCustomerTransactions(@Path("customer_id") customerId: Int? = null): Observable<List<Transaction>>
+
+    @GET("customers/{customer_id}/appointments")
+    fun getAppoinmentsOfCustomer(@Path("customer_id") customerId: Int? = null): Observable<List<Appointment>>
 }
