@@ -8,6 +8,7 @@ import gr.gap.workit.domain.model.Appointment
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import android.view.View
+import kotlinx.android.synthetic.main.list_element_book.view.*
 
 class AppointmentsAdapter(val appointments : ArrayList<Appointment>): RecyclerView.Adapter<AppointmentsAdapter.ViewHolder>() {
 
@@ -34,9 +35,9 @@ class AppointmentsAdapter(val appointments : ArrayList<Appointment>): RecyclerVi
 
         fun bindItems(appointment: Appointment) {
 
-           // itemView.bookTitle.text = book.name
-           // itemView.bookCreatedAt.text = book.createdAt
-//
+           itemView.bookTitle.text = appointment.notes
+           itemView.bookCreatedAt.text = appointment.date
+
             itemView.setOnClickListener {
                 listener.onNext(appointment)
             }

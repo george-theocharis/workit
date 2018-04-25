@@ -1,3 +1,5 @@
 package gr.gap.workit.domain.model
 
-data class Appointment(val id: Int = 0)
+import com.squareup.moshi.Json
+
+data class Appointment(val id: Int = 0, @Json(name = "appointment_date")val date: String? = null, val notes: String? = null)

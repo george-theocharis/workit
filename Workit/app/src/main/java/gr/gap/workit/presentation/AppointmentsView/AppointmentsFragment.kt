@@ -40,7 +40,7 @@ class AppointmentsFragment: MviFragment<AppointmentsView, AppointmentsPresenter>
         super.onDestroy()
         subscription?.dispose()
     }
-    
+
     override fun loadAppointmentsIntent(): Observable<Int> = Observable.just(1)
 
     override fun render(state: AppointmentsViewState) {
