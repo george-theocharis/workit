@@ -5,8 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.transition.TransitionManager
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout.VERTICAL
 import com.hannesdorfmann.mosby3.mvi.layout.MviFrameLayout
 import gr.gap.workit.R
@@ -18,6 +21,7 @@ import gr.gap.workit.presentation.LoginView.CustomersPresenter
 import gr.gap.workit.presentation.LoginView.CustomersView
 import gr.gap.workit.presentation.LoginView.CustomersViewState
 import io.reactivex.Observable
+import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.view_customers.view.*
 
 class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresenter> {
@@ -63,10 +67,16 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
     }
 
     private fun renderCustomers(customers: List<Customer>) {
+        TransitionManager.beginDelayedTransition(this)
+        this.visibility = View.VISIBLE
+        progressBar.visibility = View.GONE
         customersAdapter.updateItems(customers)
     }
 
     private fun renderLoading() {
+        TransitionManager.beginDelayedTransition(this)
+        this.visibility = View.GONE
+        progressBar.visibility = View.VISIBLE
     }
 
 }
