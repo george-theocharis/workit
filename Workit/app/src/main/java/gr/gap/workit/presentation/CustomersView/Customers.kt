@@ -68,8 +68,8 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
 
     private fun renderCustomers(customers: List<Customer>) {
         TransitionManager.beginDelayedTransition(this)
-        this.visibility = View.VISIBLE
         progressBar.visibility = View.GONE
+        this.visibility = View.VISIBLE
         customersAdapter.updateItems(customers)
     }
 
