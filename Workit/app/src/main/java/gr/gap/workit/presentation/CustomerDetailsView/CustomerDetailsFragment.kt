@@ -10,6 +10,7 @@ import com.hannesdorfmann.mosby3.mvi.MviFragment
 import gr.gap.workit.R
 import gr.gap.workit.data.di.App
 import io.reactivex.Observable
+import kotlinx.android.synthetic.main.activity_customer_details.*
 import kotlinx.android.synthetic.main.fragment_customer_details.*
 import kotlin.collections.ArrayList
 
@@ -61,7 +62,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     }
 
     private fun renderLoading(){
-
+        (context as CustomerDetailsActivity).renderLoading()
     }
 
     private fun renderData(state: CustomerDetailsViewState.Data){
@@ -81,6 +82,8 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
             locationsAdapter.updateList(state.customer?.addresses)
         else
             showAddAddress()
+
+        (context as CustomerDetailsActivity).renderData()
     }
 
     private fun renderError(state: CustomerDetailsViewState.Error){

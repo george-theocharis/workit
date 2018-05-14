@@ -3,8 +3,13 @@ package gr.gap.workit.presentation.CustomerDetailsView
 import android.os.Bundle
 import android.support.transition.Explode
 import android.support.transition.Fade
+import android.support.transition.TransitionManager
+import android.support.transition.Visibility
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import android.view.ViewGroup
 import gr.gap.workit.R
 import gr.gap.workit.domain.model.Appointment
 import gr.gap.workit.domain.model.Customer
@@ -61,6 +66,18 @@ class CustomerDetailsActivity : AppCompatActivity() {
     fun updateHeaderInfo(customer: Customer) {
         headerName.text= "${customer.firstName} ${customer.lastName}"
         customerIcon.text = customer.firstName[0].toString() + customer.lastName[0].toString()
+    }
+
+    fun renderLoading() {
+        TransitionManager.beginDelayedTransition(customerDetailsContent as ViewGroup)
+        fragment_container.visibility = GONE
+        progressBar.visibility = VISIBLE
+    }
+
+    fun renderData(){
+        TransitionManager.beginDelayedTransition(customerDetailsContent as ViewGroup)
+        progressBar.visibility = GONE
+        fragment_container.visibility = VISIBLE
     }
 }
 
