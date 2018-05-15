@@ -1,6 +1,8 @@
 package gr.gap.workit.presentation.CustomersView
 
 import android.support.v7.widget.RecyclerView
+import android.transition.Fade
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,9 +41,11 @@ class CustomersAdapter(private val customers : ArrayList<Customer>): RecyclerVie
         val listener: PublishSubject<Customer> = clickSubject
 
         fun bindItems(customer: Customer) {
-
-            itemView.setOnClickListener { listener.onNext(customer) }
-
+            itemView.setOnClickListener {
+                TransitionManager.beginDelayedTransition(it as ViewGroup, Fade())
+                itemView.actions.visibility = if (itemView.actions.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+            }
+            itemView.more.setOnClickListener{listener.onNext(customer)}
             itemView.customerName.text = customer.firstName + " " + customer.lastName
             itemView.customerIcon.text = customer.firstName[0].toString() + customer.lastName[0].toString()
         }
