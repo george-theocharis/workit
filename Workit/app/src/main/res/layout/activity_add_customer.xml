@@ -74,7 +74,7 @@
                 android:layout_alignParentTop="true"
                 android:background="@color/colorPrimary"
                 android:padding="8dp"
-                android:text="Contact Info"
+                android:text="@string/contact_info"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textColor="@color/cardview_light_background"
                 />
@@ -209,7 +209,7 @@ s                    <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="Locations"
+                    android:text="@string/locations"
                     android:textColor="@color/cardview_light_background"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                     />
@@ -219,7 +219,7 @@ s                    <android.support.design.widget.TextInputEditText
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_toStartOf="@+id/imageLocation"
-                    android:text="Autofill Location"
+                    android:text="@string/autofill"
                     android:textColor="@color/cardview_light_background"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                     />

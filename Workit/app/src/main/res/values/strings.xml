@@ -33,9 +33,15 @@
     <string name="location">Location</string>
     <string name="visibility">Visibility</string>
 
-    <!-- Customer -->
+    <!-- Customer Bottombar -->
     <string name="general">General</string>
     <string name="books">Books</string>
+    <string name="transactions">Transactions</string>
+    <string name="appointments">Appointments</string>
+
+    <!-- Customers -->
+    <string name="contact_info">Contact Info</string>
+    <string name="locations">Locations</string>
     <string name="address">Address</string>
     <string name="address_number">Address No</string>
     <string name="zip">Post Code</string>
@@ -43,7 +49,6 @@
     <string name="add_phone">Add phone number</string>
     <string name="add_address">Add address</string>
     <string name="add_email">Add email</string>
-    <string name="transactions">Transactions</string>
-    <string name="appointments">Appointments</string>
+    <string name="autofill">Autofill</string>
 
 </resources>
