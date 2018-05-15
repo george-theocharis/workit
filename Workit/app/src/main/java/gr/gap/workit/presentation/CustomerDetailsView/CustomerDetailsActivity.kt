@@ -30,7 +30,6 @@ class CustomerDetailsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_customer_details)
 
-
         val customerId = intent.getIntExtra("customerId", 0)
 
         if(savedInstanceState == null)
