@@ -31,6 +31,7 @@ class PagesActivity: MviActivity<PagesView, PagesPresenter>(), PagesView{
     }
 
     private fun navigateToPageDetails(id: Int?) {
+        print(id)
     }
 
     override fun loadPagesIntent(): Observable<Boolean> = Observable.just(true)
@@ -44,6 +45,7 @@ class PagesActivity: MviActivity<PagesView, PagesPresenter>(), PagesView{
     }
 
     private fun renderError(state: PagesViewState.Error) {
+        print(state.error.message)
     }
 
     private fun renderData(state: PagesViewState.Data) {

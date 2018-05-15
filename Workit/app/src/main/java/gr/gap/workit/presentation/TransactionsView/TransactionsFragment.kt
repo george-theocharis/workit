@@ -38,7 +38,7 @@ class TransactionsFragment: MviFragment<TransactionsView, TransactionsPresenter>
 
     override  fun onDestroy() {
         super.onDestroy()
-        subscription?.dispose()
+        subscription.dispose()
     }
 
     override fun loadTransactionsIntent(): Observable<Int> = Observable.just(1)
@@ -60,6 +60,6 @@ class TransactionsFragment: MviFragment<TransactionsView, TransactionsPresenter>
     }
 
     private fun renderError(state: TransactionsViewState.Error){
-
+        print(state.error.message)
     }
 }

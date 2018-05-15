@@ -23,7 +23,7 @@ class RegisterActivity : MviActivity<RegisterView, RegisterPresenter>(), Registe
     }
 
     private fun renderError(state: RegisterViewState.Error) {
-
+        print(state.error.message)
     }
 
     private fun renderData() {

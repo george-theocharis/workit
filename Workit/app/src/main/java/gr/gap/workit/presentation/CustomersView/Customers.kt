@@ -64,6 +64,7 @@ class Customers :  CustomersView, MviFrameLayout<CustomersView, CustomersPresent
     }
 
     private fun renderError(error: Throwable) {
+        print(error.message)
     }
 
     private fun renderCustomers(customers: List<Customer>) {
