@@ -10,7 +10,7 @@ import javax.inject.Inject
  */
 class LoginUserUseCase @Inject constructor(private val userApi: UserApi){
 
-    fun loginUser(): Observable<LoginViewState> {
+    fun loginUser(username: String, password: String): Observable<LoginViewState> {
         return userApi.getUser()
                 .map<LoginViewState> { LoginViewState.Data(it) }
                 .startWith(LoginViewState.Loading)
