@@ -33,9 +33,15 @@
     <string name="location">Τοποθεσία</string>
     <string name="visibility">Ορατότητα</string>
 
-    <!-- Customer -->
+    <!-- Customer Bottombar -->
     <string name="general">Γενικά</string>
     <string name="books">Βιβλία</string>
+    <string name="transactions">Συναλλαγές</string>
+    <string name="appointments">Ραντεβού</string>
+
+    <!-- Customers -->
+    <string name="contact_info">Στοιχεία Επικοινωνίας</string>
+    <string name="locations">Περιοχές</string>
     <string name="address">Διεύθυνση</string>
     <string name="address_number">Αριθμός</string>
     <string name="zip">Τ.Κ.</string>
@@ -43,5 +49,6 @@
     <string name="add_phone">Προσθήκη τηλεφώνου</string>
     <string name="add_address">Προσθήκη διεύθυνσης</string>
     <string name="add_email">Προσθήκη email</string>
+    <string name="autofill">Αυτόματη Συμπλήρωση</string>
 
 </resources>
