@@ -68,18 +68,18 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     private fun renderData(state: CustomerDetailsViewState.Data){
         (context as CustomerDetailsActivity).updateHeaderInfo(state.customer)
 
-        if (state.customer.email == null || state.customer.email.isBlank())
+        if (state.customer.email.isBlank())
             showAddEmail()
         else
             emailText.text = state.customer.email
 
-        if (state.customer?.phones != null)
-            phonesAdapter.updateList(state.customer?.phones)
+        if (state.customer.phones != null)
+            phonesAdapter.updateList(state.customer.phones)
         else
             showAddPhone()
 
-        if (state.customer?.addresses != null)
-            locationsAdapter.updateList(state.customer?.addresses)
+        if (state.customer.addresses != null)
+            locationsAdapter.updateList(state.customer.addresses)
         else
             showAddAddress()
 
@@ -87,7 +87,7 @@ class CustomerDetailsFragment : MviFragment<CustomerDetailsView, CustomerDetails
     }
 
     private fun renderError(state: CustomerDetailsViewState.Error){
-
+        print(state.error.message)
     }
 
     private fun showAddEmail(){

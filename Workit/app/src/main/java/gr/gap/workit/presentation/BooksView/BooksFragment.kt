@@ -41,7 +41,7 @@ class BooksFragment: MviFragment<BooksView, BooksPresenter>(), BooksView{
 
     override  fun onDestroy() {
         super.onDestroy()
-        subscription?.dispose()
+        subscription.dispose()
     }
 
     private fun navigateToPages(bookId: Int?) {
@@ -69,6 +69,6 @@ class BooksFragment: MviFragment<BooksView, BooksPresenter>(), BooksView{
     }
 
     private fun renderError(state: BooksViewState.Error){
-
+        print(state.error.message)
     }
 }

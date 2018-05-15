@@ -82,6 +82,7 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
     }
 
     private fun renderLogin(state: LoginViewState){
+        print(state.toString())
         navigateToHome()
         finish()
     }
