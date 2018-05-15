@@ -62,9 +62,9 @@ class LoginActivity : MviActivity<LoginView, LoginPresenter>(), LoginView {
         dialog.show()
     }
 
-    override fun loginIntent(): Observable<String> = RxView.clicks(btn_login)
-            .flatMap { _ ->
-                Observable.just(inputEmail.text.toString())
+    override fun loginIntent(): Observable<Pair<String, String>> = RxView.clicks(btn_login)
+            .map { _ ->
+               Pair(inputEmail.text.toString(), inputPassword.text.toString())
             }
 
     override fun render(state: LoginViewState) {

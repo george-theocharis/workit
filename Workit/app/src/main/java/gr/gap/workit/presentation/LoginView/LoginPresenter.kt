@@ -12,11 +12,11 @@ import javax.inject.Inject
 class LoginPresenter @Inject constructor(private val loginUserUseCase: LoginUserUseCase) : MviBasePresenter<LoginView, LoginViewState>() {
     override fun bindIntents() {
 
-        val loginViewStateObs = intent (LoginView::loginIntent)
-                .switchMap { loginUserUseCase.loginUser()}
+        val loginViewState = intent (LoginView::loginIntent)
+                .switchMap { loginUserUseCase.loginUser(it.first, it.second)}
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 
-        subscribeViewState(loginViewStateObs, LoginView::render)
+        subscribeViewState(loginViewState, LoginView::render)
     }
 }
