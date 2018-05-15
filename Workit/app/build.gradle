@@ -27,38 +27,43 @@ android {
 }
 
 ext {
-        dagger = 2.15
-        retrofit = "2.4.0"
-        moshi="1.5.0"
-        okhttp="3.10.0"
+    dagger = 2.15
+    retrofit = "2.4.0"
+    moshi = "1.5.0"
+    okhttp = "3.10.0"
+}
+
+repositories {
+    maven() {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
 }
 
 dependencies {
-
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.2.31"
-        implementation 'androidx.core:core-ktx:0.3'
-        implementation 'com.android.support:appcompat-v7:27.1.1'
-        implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-        testImplementation 'junit:junit:4.12'
-        androidTestImplementation 'com.android.support.test:runner:1.0.1'
-        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-        implementation 'com.android.support:design:27.1.1'
-        implementation 'com.android.support:cardview-v7:27.1.1'
-        implementation "com.squareup.retrofit2:retrofit:$retrofit"
-        implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
-        implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
-        implementation "com.squareup.okhttp3:okhttp:$okhttp"
-        implementation "com.squareup.moshi:moshi-kotlin:$moshi"
-        implementation 'com.hannesdorfmann.mosby3:mvi:3.1.0'
-        implementation "io.reactivex.rxjava2:rxjava:2.1.12"
-        implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
-        implementation "com.google.dagger:dagger:$dagger"
-        implementation "com.google.dagger:dagger-android-support:$dagger"
-        kapt "com.google.dagger:dagger-android-processor:$dagger"
-        kapt "com.google.dagger:dagger-compiler:$dagger"
-        debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-        releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-    testImplementation "org.mockito:mockito-core:2.+"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.2.31'
+    implementation 'androidx.core:core-ktx:0.3'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi"
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    implementation "com.google.dagger:dagger:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testImplementation 'org.mockito:mockito-core:2.+'
+    implementation 'com.hannesdorfmann.mosby3:mvi:3.1.1-SNAPSHOT'
 }
 
