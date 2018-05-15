@@ -1,5 +1,7 @@
 package gr.gap.workit.presentation.CustomersView
 
+import android.app.Activity
+import android.app.Notification
 import android.support.v7.widget.RecyclerView
 import android.transition.Fade
 import android.transition.TransitionManager
@@ -12,6 +14,17 @@ import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.list_element_customer.view.*
 import java.util.*
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Color
+import android.net.Uri
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat.*
+import android.support.v4.content.PermissionChecker
+import android.view.ActionMode
+import gr.gap.workit.domain.utilities.Utils
+import kotlinx.android.synthetic.main.activity_login.view.*
+import java.security.Permission
 
 
 class CustomersAdapter(private val customers : ArrayList<Customer>): RecyclerView.Adapter<CustomersAdapter.ViewHolder>() {
@@ -45,9 +58,27 @@ class CustomersAdapter(private val customers : ArrayList<Customer>): RecyclerVie
                 TransitionManager.beginDelayedTransition(it as ViewGroup, Fade())
                 itemView.actions.visibility = if (itemView.actions.visibility == View.VISIBLE) View.GONE else View.VISIBLE
             }
+            //temView.call.setOnClickListener{
+            //   if (checkSelfPermission(it.context, "PHONE_CALL") ==  PackageManager.PERMISSION_GRANTED){
+            //       if (customer.phones?.count() == 1){
+            //           var intent = Intent("ACTION_CALL", Uri.parse(customer.phones.first().toString()))
+            //           it.context.startActivity(intent)
+            //       }
+            //       else{
+            //       }
+            //   }
+            //   else{
+            //       ActivityCompat.requestPermissions()
+            //   }
+            //
+            //}
             itemView.more.setOnClickListener{listener.onNext(customer)}
             itemView.customerName.text = customer.firstName + " " + customer.lastName
             itemView.customerIcon.text = customer.firstName[0].toString() + customer.lastName[0].toString()
+
+            var bg = getDrawable(itemView.context, R.drawable.circle)
+            bg?.setTint(Utils.getRandomColor())
+            itemView.customerIcon.background = bg
         }
     }
 }
